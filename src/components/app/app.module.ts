@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { AppRouting } from './app.route';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../login/login.component';
 
@@ -9,7 +9,7 @@ import { LoginComponent } from '../login/login.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+
   ],
   imports: [
     BrowserModule,
