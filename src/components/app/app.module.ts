@@ -3,7 +3,7 @@ import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRouting } from './app.route';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../login/login.component';
-
+import {InnerModule} from '../innerModule/inner/inner.module'
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import { LoginComponent } from '../login/login.component';
   imports: [
     BrowserModule,
     AppRouting,
+    InnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
