@@ -1,4 +1,5 @@
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { PromiseType } from 'protractor/built/plugins';
 
 @Component({
   selector: 'app-root',
