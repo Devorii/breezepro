@@ -3,9 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { InnerRoutingModule } from './inner-routing.module';
 import { HomeComponent } from './innerComponents/home/home.component';
+import { HeaderComponent } from './innerComponents/header/header.component';
+import { FooterComponent } from './innerComponents/footer/footer.component';
+import { CreateComponent } from './innerComponents/home/create/create.component';
+import { NewproposalComponent } from './innerComponents/home/newproposal/newproposal.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, HeaderComponent, FooterComponent, CreateComponent, NewproposalComponent],
   imports: [
     CommonModule,
     InnerRoutingModule
