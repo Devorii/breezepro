@@ -7,9 +7,10 @@ import { HeaderComponent } from './innerComponents/header/header.component';
 import { FooterComponent } from './innerComponents/footer/footer.component';
 import { CreateComponent } from './innerComponents/home/create/create.component';
 import { NewproposalComponent } from './innerComponents/home/newproposal/newproposal.component';
+import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
 
 @NgModule({
-  declarations: [HomeComponent, HeaderComponent, FooterComponent, CreateComponent, NewproposalComponent],
+  declarations: [HomeComponent, HeaderComponent, FooterComponent, CreateComponent, NewproposalComponent, ViewproposalComponent],
   imports: [
     CommonModule,
     InnerRoutingModule
