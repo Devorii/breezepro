@@ -1,7 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
-import {Router} from "@angular/router";
-import {AuthService,GoogleLoginProvider} from 'angular-6-social-login';
+import { Router } from "@angular/router";
+import { AuthService, GoogleLoginProvider } from 'angular-6-social-login';
 
 @Component({
   selector: 'app-login',
@@ -10,57 +10,52 @@ import {AuthService,GoogleLoginProvider} from 'angular-6-social-login';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() productData = { email:'eve.holt@reqres.in', password:'cityslicka' };
+  splitted;
+  removedot = [];
+  ValidDomain = "breezemaxweb";
+
+  @Input() productData = { email: 'eve.holt@reqres.in', password: 'cityslicka' };
 
   constructor(private data: DataService, private socialAuthService: AuthService) { }
 
 
-
-  public socialSignIn(socialPlatform : string) {
+  public socialSignIn(socialPlatform: string) {
     let socialPlatformProvider;
-    
-   
-      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-      console.log(socialPlatformProvider);
-    
-    
+
+
+    socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
-        console.log(socialPlatform+" sign in data : " , userData);
-        // Now sign-in with userData
-        // ...
-            
+        this.splitted = userData.email.split("@");
+        this.removedot = this.splitted[1].split(".");
+
+        if (this.removedot[0] == this.ValidDomain) {
+          console.log(socialPlatform + " sign in data : ", userData);
+         
+          this.data.login(userData).subscribe((result) => {
+
+            console.log(result);
+            //localStorage.setItem('token', (result.data.token));
+            //localStorage.setItem('user_id', JSON.stringify(result.data.id));
+            // this.router.navigate(['maincontainer/dashboard'])
+
+          }, (err) => {
+            console.log(err);
+          });
+
+        }
+        else {
+          console.log(userData.email + " is not valid");
+        }
+
+
       }
     );
   }
 
 
   ngOnInit() {
-   
+
   }
-
-
-  loginVisitor() {
-    
-    console.log(this.productData.email);
-    this.data.login(this.productData).subscribe((result) => {
-   
-      
-        console.log(result);
-        localStorage.setItem('token',( result.data.token));
-        //localStorage.setItem('token', JSON.stringify( result.data.token));
-        localStorage.token = result.data.token;
-        localStorage.businessname = result.data.name;
-        localStorage.setItem('user_id', JSON.stringify( result.data.id));
-        // this.data.setheader();
-        // this.router.navigate(['maincontainer/dashboard'])
-    
-      
-    }, (err) => {
-      console.log(err);
-    });
-  }
-
-
-
 }
