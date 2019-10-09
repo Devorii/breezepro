@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from "@angular/router";
 import { AuthService, GoogleLoginProvider } from 'angular-6-social-login';
+import { NgxSpinnerService } from "ngx-spinner";
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +18,11 @@ export class LoginComponent implements OnInit {
 
   @Input() productData = { email: 'eve.holt@reqres.in', password: 'cityslicka' };
 
-  constructor(private data: DataService, private socialAuthService: AuthService) { }
+  constructor(private data: DataService, private socialAuthService: AuthService,private router: Router,private spinner: NgxSpinnerService) { }
 
 
   public socialSignIn(socialPlatform: string) {
+    this.spinner.show();
     let socialPlatformProvider;
 
 
@@ -36,16 +39,21 @@ export class LoginComponent implements OnInit {
           this.data.login(userData).subscribe((result) => {
 
             console.log(result);
-            //localStorage.setItem('token', (result.data.token));
-            //localStorage.setItem('user_id', JSON.stringify(result.data.id));
-            // this.router.navigate(['maincontainer/dashboard'])
+            if(result.data == 'success'){
+              localStorage.token = userData.token;
+              this.router.navigate(['dashboard/create'])
+              this.spinner.hide();
+            }
+            
 
           }, (err) => {
+            this.spinner.hide();
             console.log(err);
           });
 
         }
         else {
+          this.spinner.hide();
           console.log(userData.email + " is not valid");
         }
 
@@ -56,6 +64,6 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-
+    console.log('now: ', _.now());
   }
 }
