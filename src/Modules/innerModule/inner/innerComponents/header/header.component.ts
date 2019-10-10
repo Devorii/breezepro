@@ -10,6 +10,9 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   
   }
+
+  dateTime = Date.now();
 
 }

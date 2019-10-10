@@ -1,0 +1,14 @@
+$accentColor: #FC4F44;
+
+.globalBtn{
+    color: black ;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 17px;
+    &:hover{ 
+        cursor: pointer;
+        color: $accentColor;
+        border-bottom: 1px solid $accentColor;
+    }
+}

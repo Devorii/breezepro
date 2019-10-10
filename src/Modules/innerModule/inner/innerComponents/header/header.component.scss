@@ -1,0 +1,38 @@
+$accentColor: #FC4F44;
+
+.mHeader{
+    background: #212440;
+    border-radius: 0px 0px 40px 40px;
+    height: 50vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+.header-wrapper{
+    display: flex;
+    color: white;
+    width: 75vw;
+    height: 10vh;
+    align-items: center;
+    padding: 0px 0px 0px 0px;
+    h4{
+        margin-left: 6px;
+    }
+}
+#NameBackdrop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    border-radius: 100%;
+    background-color: $accentColor;
+}
+#dateTime{ 
+    color: white;
+    font-style: bold;
+    margin-left: 20px;
+    margin-top: 100px;
+    font-size: 25px;
+}

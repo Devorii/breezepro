@@ -1,0 +1,34 @@
+$PrimaryColor: #212440;
+
+
+#login-wrapper{ 
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+background: linear-gradient(
+    rgba($PrimaryColor, 0.82), 
+    rgba($PrimaryColor, 0.82)
+),
+url("src/assets/backgroundWallpaper.jpg") no-repeat;
+background-size: cover;
+}
+#googleLogo{ 
+width: 60px;
+height: 60px;
+margin: 60px 0px 20px 0px;
+}
+#login-title{ 
+    color: white; 
+    margin: 0;
+    letter-spacing: 1px;
+}
+#login-container{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
