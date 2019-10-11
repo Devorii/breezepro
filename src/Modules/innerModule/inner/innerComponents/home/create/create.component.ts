@@ -15,10 +15,13 @@ export class CreateComponent implements OnInit {
 
  createLeads = []
 
-leadInformation(name, email){
+
+leadInformation(name, email, id:number){
     // console.log(name, email)
    //create and object
+    id = id++
     let leads = {
+      // mID = id;
       mName: name, 
       mEmail: email
     }

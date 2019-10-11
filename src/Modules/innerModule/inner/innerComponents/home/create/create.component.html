@@ -1,19 +1,16 @@
 <!-- List view iteration -->
+<!-- <ejs-calendar></ejs-calendar> -->
+<div class="list-group" (click)="callNewModal()">
+  <ul class="list-group-item" *ngFor="let leads of createLeads"> 
+    <li class="ClientName">{{leads.mName}}</li> 
 
-  <ul *ngFor="let leads of createLeads"> 
-    <li class="ClientName">{{leads.mName}} <app-list-btn (click)="callNewModal()"></app-list-btn></li>
   </ul>
-
-
-
-
-
+</div>
 
 <!-- Universal Button -->
 <div id="btnAlign">
 <app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
 </div>
-
 
 <div class="container"> 
 
@@ -37,9 +34,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation(nameValue.value, emailValue.value)">Submit</button>
               </div>
-            </div>
-            
+            </div> 
           </div>
         </div>
-        
       </div>

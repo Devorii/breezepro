@@ -40,3 +40,14 @@ label{
         right: 40px;
     }
 }
+.list-group{
+    max-height: 230px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.list-group-item{
+    border: none;
+    border-bottom: 1px solid #ddd;
+ 
+}
