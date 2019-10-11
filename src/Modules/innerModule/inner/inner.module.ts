@@ -26,6 +26,11 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
     CalendarModule
   
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
+  exports: [
+    ButtonComponent 
+  ]
+ 
 })
 export class InnerModule { }

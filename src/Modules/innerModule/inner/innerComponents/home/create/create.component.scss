@@ -1,0 +1,31 @@
+$PrimaryColor: #212440;
+
+#noProposal{
+    color: rgba(128, 128, 128, 0.247);
+    text-align: center;
+}
+#btnAlign{
+    position: absolute;
+    width: 100vw;
+    bottom: 50px;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+}
+label{ 
+    margin-top: 2px;
+    color: $PrimaryColor;
+}
+.modalInput{
+    border: none;
+    border-bottom: 1px solid $PrimaryColor;
+    padding: 3px;
+    margin-top: 2px;
+}
+.inputStyle{
+    display: flex;
+    flex-direction: column;
+}
+#myModal{
+    top: 37vh;
+}
