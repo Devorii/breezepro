@@ -29,3 +29,14 @@ label{
 #myModal{
     top: 37vh;
 }
+// list generation styling
+.ClientName{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    app-list-btn{
+        position: absolute;
+        right: 40px;
+    }
+}

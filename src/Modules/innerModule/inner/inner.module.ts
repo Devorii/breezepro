@@ -9,6 +9,8 @@ import { FooterComponent } from './innerComponents/footer/footer.component';
 import { CreateComponent } from './innerComponents/home/create/create.component';
 import { NewproposalComponent } from './innerComponents/home/newproposal/newproposal.component';
 import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
+import { ListBtnComponent } from './innerComponents/globalComponents/list-btn/list-btn.component';
+
 
 @NgModule({
   declarations: [
@@ -18,10 +20,11 @@ import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewp
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent ],
+    ButtonComponent, ListBtnComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,
+
   ],
   exports: [
     ButtonComponent 

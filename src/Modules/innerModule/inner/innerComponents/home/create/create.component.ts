@@ -13,4 +13,23 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+ createLeads = []
+
+leadInformation(name, email){
+    // console.log(name, email)
+   //create and object
+    let leads = {
+      mName: name, 
+      mEmail: email
+    }
+      if(leads.mName && leads.mEmail != null){
+        this.createLeads.push(leads)
+      }
+    console.log(this.createLeads)
+    }
+    callNewModal(){
+      alert("btn Clicked")
+    }
+
+  }
+ 
