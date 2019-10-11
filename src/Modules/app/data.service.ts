@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 export class DataService {
 
-  Urlendpoint = 'https://reqres.in';
+  Urlendpoint = 'https://proposal.breezesquad.com/api/v1/';
   Apptoken;
   HttpHeaderOptions: any;
 
@@ -29,7 +29,7 @@ export class DataService {
 
 
   login(product): Observable<any> {
-    return this.http.post<any>(this.Urlendpoint + '/api/login', JSON.stringify(product), this.HttpHeaderOptions);
+    return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
   }
 
 }

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   splitted;
   removedot = [];
+  
   ValidDomain = "breezemaxweb";
 
   @Input() productData = { email: 'eve.holt@reqres.in', password: 'cityslicka' };
@@ -34,22 +35,29 @@ export class LoginComponent implements OnInit {
         this.removedot = this.splitted[1].split(".");
 
         if (this.removedot[0] == this.ValidDomain) {
-          console.log(socialPlatform + " sign in data : ", userData);
-         
-          // this.data.login(userData).subscribe((result) => {
+          //console.log(socialPlatform + " sign in data : ", userData);
+      
 
-            // console.log(result);
-            // if(result.data == 'success'){
-              localStorage.token = userData.token;
+          
+          //console.log(this.GoogleData);
+         
+          this.data.login(userData).subscribe((result) => {
+
+            console.log(result);
+            if(result){
+              localStorage.googletoken = userData.token;
+              localStorage.googlename = userData.name;
+              console.log(localStorage.googletoken);
+              console.log(localStorage.googlename);
               this.router.navigate(['dashboard/create'])
               this.spinner.hide();
-            // }
+            }
             
 
-          // }, (err) => {
-          //   this.spinner.hide();
-          //   console.log(err);
-          // });
+          }, (err) => {
+            this.spinner.hide();
+            console.log(err);
+          });
 
         }
         else {
