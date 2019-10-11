@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "angular-6-social-login";
 import { NgxSpinnerModule } from "ngx-spinner";
 
+
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
     [
@@ -35,7 +36,8 @@ export function getAuthServiceConfigs() {
     HttpClientModule,
     FormsModule,
     SocialLoginModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+  
   ],
   providers: [{
     provide: AuthServiceConfig,
