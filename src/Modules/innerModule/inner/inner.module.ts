@@ -22,7 +22,9 @@ import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewp
   imports: [
     CommonModule,
     InnerRoutingModule,
-  
+  ],
+  exports: [
+    ButtonComponent 
   ]
 })
 export class InnerModule { }

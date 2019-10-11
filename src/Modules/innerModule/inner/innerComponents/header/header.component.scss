@@ -28,6 +28,9 @@ $accentColor: #FC4F44;
     margin-left: 20px;
     border-radius: 100%;
     background-color: $accentColor;
+    h4{ 
+        margin: 0;
+    }
 }
 #dateTime{ 
     color: white;

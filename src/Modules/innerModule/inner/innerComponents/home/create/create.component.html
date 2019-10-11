@@ -1,6 +1,37 @@
 
-<div style="text-align:center">
-<app-button btnInfo="Create" [routerLink]="['../new']"></app-button>
+<h1 id="noProposal">No Leads Created</h1>
 
 
+<div id="btnAlign">
+<app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
+<!-- [routerLink]="['../new']" -->
 </div>
+
+
+<div class="container"> 
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center " >Create New Lead</h4>
+              </div>
+              <div class="modal-body inputStyle">
+                  <label for="name">Name:</label>
+                <input class="modalInput" type="text" placeholder="name" name="name" >
+                <label for="email">Email:</label>
+                <input class="modalInput" type="email" placeholder="example@breezemaxweb.com" name="email">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
