@@ -5,6 +5,8 @@
     <h1 id="login-title">{{title}}</h1>
     <img id="googleLogo" src="/assets/google-logo.png" alt="google icon">
     <app-button btnInfo="Login with Google" name="globalBtn" [routerLink]="['/dashboard/create']"></app-button>
+    <!-- <app-button btnInfo="Login with Google" [routerLink]="['/dashboard/create']"></app-button>
+    <button (click)="socialSignIn('google')">Sign in with Google</button>   -->
   </div>
 </div>
 
@@ -19,3 +21,11 @@
     <button type="submit" [routerLink]="['/dashboard/create']" >Login</button>
   
   </div> -->
+  
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="line-scale"
+>
+  <p style="font-size: 20px; color: white">Loading...</p></ngx-spinner>
