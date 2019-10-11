@@ -32,6 +32,22 @@ export class DataService {
     return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
   }
 
+  Getleads(product): Observable<any> {
+    return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
+  }
+
+  Createleads(product): Observable<any> {
+    return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
+  }
+
+  Editleads(product): Observable<any> {
+    return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
+  }
+
+  Deleteleads(product): Observable<any> {
+    return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
+  }
+
 }
 
 

@@ -29,3 +29,25 @@ label{
 #myModal{
     top: 37vh;
 }
+// list generation styling
+.ClientName{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    app-list-btn{
+        position: absolute;
+        right: 40px;
+    }
+}
+.list-group{
+    max-height: 230px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.list-group-item{
+    border: none;
+    border-bottom: 1px solid #ddd;
+ 
+}

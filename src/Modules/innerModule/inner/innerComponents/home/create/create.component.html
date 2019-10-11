@@ -1,14 +1,19 @@
+<!-- List view iteration -->
+<!-- <ejs-calendar></ejs-calendar> -->
+<div class="list-group" (click)="callNewModal()">
+  <ul class="list-group-item" *ngFor="let leads of createLeads"> 
+    <li class="ClientName">{{leads.mName}}</li> 
 
-<h1 id="noProposal">No Leads Created</h1>
-
-
-<div id="btnAlign">
-<app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
-<!-- [routerLink]="['../new']" -->
+  </ul>
 </div>
 
+<!-- Universal Button -->
+<div id="btnAlign">
+<app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
+</div>
 
 <div class="container"> 
+
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
@@ -21,17 +26,15 @@
               </div>
               <div class="modal-body inputStyle">
                   <label for="name">Name:</label>
-                <input class="modalInput" type="text" placeholder="name" name="name" >
+                <input class="modalInput" type="text"  #nameValue >
                 <label for="email">Email:</label>
-                <input class="modalInput" type="email" placeholder="example@breezemaxweb.com" name="email">
+                <input class="modalInput" type="email"  #emailValue>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation(nameValue.value, emailValue.value)">Submit</button>
               </div>
-            </div>
-            
+            </div> 
           </div>
         </div>
-        
       </div>
