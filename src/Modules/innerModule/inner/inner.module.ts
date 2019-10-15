@@ -10,6 +10,7 @@ import { CreateComponent } from './innerComponents/home/create/create.component'
 import { NewproposalComponent } from './innerComponents/home/newproposal/newproposal.component';
 import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { CreateProposalComponent } from './innerComponents/globalComponents/create-proposal/create-proposal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent ],
+    ButtonComponent, CreateProposalComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,

@@ -13,26 +13,61 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
- createLeads = []
+// Global Variables
+createLeads = []
+
+leads = { 
+  mID: 0,
+  mName: "",
+  mEmail: ""
+}
+
+id = 0
+modalName:string;
 
 
-leadInformation(name, email, id:number){
+leadInformation(name, email){
     // console.log(name, email)
    //create and object
-    id = id++
-    let leads = {
-      // mID = id;
+  this.id++
+  this.leads = {
+      mID: this.id,
       mName: name, 
       mEmail: email
     }
-      if(leads.mName && leads.mEmail != null){
-        this.createLeads.push(leads)
+      if(this.leads.mName && this.leads.mEmail != null){
+        this.createLeads.push(this.leads)
       }
     console.log(this.createLeads)
     }
-    callNewModal(){
-      alert("btn Clicked")
+
+    //lead Modal injection
+    callNewModal(mIDcollect, mNameCollect){ 
+      //passing collected data to modal
+      this.modalName = mNameCollect
+      // finding data in array
+      let mFind = this.createLeads.find(x => x.mID == mIDcollect)
+     console.log(mFind)
+      
     }
 
+    // Edit button
+    edit(){ 
+      console.log("Edit")
+    } 
+    // Delete Button 
+    leadDelete(mIDcollect){  
+    console.log(mIDcollect + "Delete")
+    alert("Connect to DB")
+    location.reload()
+    }
+    // Create Proposal button
+    CreateProposal(){ 
+
+    }
+
+
   }
+
+
  
