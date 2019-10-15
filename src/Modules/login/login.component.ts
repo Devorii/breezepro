@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
+        this.spinner.show();
         this.splitted = userData.email.split("@");
         this.removedot = this.splitted[1].split(".");
 

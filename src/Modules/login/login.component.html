@@ -4,11 +4,11 @@
   <div id="login-container">
     <h1 id="login-title">{{title}}</h1>
     <img id="googleLogo" src="/assets/google-logo.png" alt="google icon">
-    <app-button btnInfo="Login with Google" (click)="socialSignIn('google')" name="globalBtn" [routerLink]="['/dashboard/create']"></app-button>
+    <app-button btnInfo="Login with Google" (click)="socialSignIn('google')" name="globalBtn"></app-button>
     <!-- <app-button btnInfo="Login with Google" [routerLink]="['/dashboard/create']"></app-button>
     <button (click)="socialSignIn('google')">Sign in with Google</button>   -->
   </div>
-</div>
+
 
 
 <!-- <div class="container">
@@ -27,4 +27,6 @@
   size="medium"
   color="#fff"
   type="line-scale">
-  <p style="font-size: 20px; color: white">Loading...</p></ngx-spinner>
+  <p style="font-size: 20px; color: white">Signing in...</p></ngx-spinner>
+
+</div>
