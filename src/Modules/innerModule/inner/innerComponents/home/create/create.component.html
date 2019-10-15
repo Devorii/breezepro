@@ -1,21 +1,19 @@
 <!-- List view iteration -->
 <!-- <ejs-calendar></ejs-calendar> -->
+
 <div class="list-group" data-toggle="modal" data-target="#leadModal">
   <ul class="list-group-item" *ngFor="let leads of createLeads"> 
     <li class="ClientName" (click)="callNewModal(leads.mID, leads.mName)">{{leads.mName}}</li> 
-
   </ul>
 </div>
 
-
-<!-- Universal Button -->
+<!-- Universal Button CREATE BTN -->
 <div id="btnAlign">
 <app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
 </div>
 
 
-
-
+<!-- **************************** CRUD FUNCTIONS ON LEAD ***************************************** -->
 <div class="container mContain">
 <!-- CRUD Modal | EDIT | DELETE | CREATE -->
 <div class="modal fade" id="leadModal" role="dialog">
@@ -28,7 +26,7 @@
       <div class="modal-body inputStyle">
           <button class="text-left" (click)="edit()">Edit</button>
           <button class="text-left" (click)="leadDelete(leads.mID)" data-dismiss="modal">Delete</button>
-          <button class="text-left">Create Proposal</button>
+          <button class="text-left" data-dismiss="modal" data-toggle="modal" data-target="#createProposal">Create Proposal</button>
       </div>
     </div>
   </div>
@@ -36,9 +34,8 @@
 
 </div>
 
-
-<div class="container"> 
-
+<!-- **************************** CREATE NEW LEAD ***************************************** -->
+<div class="container">
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
@@ -63,3 +60,32 @@
           </div>
         </div>
       </div>
+
+
+<!-- **************************** D ***************************************** -->
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="createProposal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-center " >Create Proposal</h4>
+          </div>
+          <div class="modal-body inputStyle">
+              <app-pdf-create></app-pdf-create>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation(nameValue.value, emailValue.value)">Submit</button>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+      

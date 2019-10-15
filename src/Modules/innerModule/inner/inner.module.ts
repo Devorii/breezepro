@@ -11,6 +11,9 @@ import { NewproposalComponent } from './innerComponents/home/newproposal/newprop
 import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { CreateProposalComponent } from './innerComponents/globalComponents/create-proposal/create-proposal.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-create/pdf-create.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +23,12 @@ import { CreateProposalComponent } from './innerComponents/globalComponents/crea
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent ],
+    ButtonComponent, CreateProposalComponent, PdfCreateComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,
-    CalendarModule
+    CalendarModule,
+    NgMultiSelectDropDownModule.forRoot()
   
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
