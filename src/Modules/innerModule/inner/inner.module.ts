@@ -11,6 +11,9 @@ import { NewproposalComponent } from './innerComponents/home/newproposal/newprop
 import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { CreateProposalComponent } from './innerComponents/globalComponents/create-proposal/create-proposal.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,16 @@ import { CreateProposalComponent } from './innerComponents/globalComponents/crea
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent ],
+    ButtonComponent, CreateProposalComponent, PagenotfoundComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,
     CalendarModule
   
+  ],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+        JwtHelperService,{provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   
