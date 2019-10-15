@@ -1,16 +1,41 @@
 <!-- List view iteration -->
 <!-- <ejs-calendar></ejs-calendar> -->
-<div class="list-group" (click)="callNewModal()">
+<div class="list-group" data-toggle="modal" data-target="#leadModal">
   <ul class="list-group-item" *ngFor="let leads of createLeads"> 
-    <li class="ClientName">{{leads.mName}}</li> 
+    <li class="ClientName" (click)="callNewModal(leads.mID, leads.mName)">{{leads.mName}}</li> 
 
   </ul>
 </div>
+
 
 <!-- Universal Button -->
 <div id="btnAlign">
 <app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
 </div>
+
+
+
+
+<div class="container mContain">
+<!-- CRUD Modal | EDIT | DELETE | CREATE -->
+<div class="modal fade" id="leadModal" role="dialog">
+  <div class="modal-dialog" id="lead-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- collect selected lead title -->
+        <h4 class="modal-title text-left" style="color: cornflowerblue">{{modalName}}</h4>
+      </div>
+      <div class="modal-body inputStyle">
+          <button class="text-left" (click)="edit()">Edit</button>
+          <button class="text-left" (click)="leadDelete(leads.mID)" data-dismiss="modal">Delete</button>
+          <button class="text-left">Create Proposal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
 
 <div class="container"> 
 
