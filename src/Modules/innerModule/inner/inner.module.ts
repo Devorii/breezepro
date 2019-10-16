@@ -14,6 +14,7 @@ import { CreateProposalComponent } from './innerComponents/globalComponents/crea
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
 
 @NgModule({
   declarations: [
