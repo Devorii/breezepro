@@ -7,8 +7,17 @@
     <app-button btnInfo="Login with Google" (click)="socialSignIn('google')" name="globalBtn"></app-button>
     <!-- <app-button btnInfo="Login with Google" [routerLink]="['/dashboard/create']"></app-button>
     <button (click)="socialSignIn('google')">Sign in with Google</button>   -->
+    <div class="row"></div>
+    <div style="padding: 10px" class="text-center" *ngIf="ErrorMessage" >
+      <div class="alert alert-danger" role="alert">
+          {{ErrorMessage}}
+        </div>
+  
+  </div>
+  
   </div>
 
+ 
 
 
 <!-- <div class="container">

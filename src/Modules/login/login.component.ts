@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   splitted;
   removedot = [];
-  
+  ErrorMessage: string;
   ValidDomain = "breezemaxweb";
 
   @Input() productData = { email: 'eve.holt@reqres.in', password: 'cityslicka' };
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(private data: DataService, private socialAuthService: AuthService,private router: Router,private spinner: NgxSpinnerService) { }
 
   title = "Breeze Pro"
+
   public socialSignIn(socialPlatform: string) {
     this.spinner.show();
     let socialPlatformProvider;
@@ -46,8 +47,8 @@ export class LoginComponent implements OnInit {
 
             console.log(result);
             if(result){
-              localStorage.googletoken = userData.token;
-              localStorage.googlename = userData.name;
+              localStorage.googletoken = result.data.token;
+              localStorage.googlename = result.data.name;
               console.log(localStorage.googletoken);
               console.log(localStorage.googlename);
               this.router.navigate(['dashboard/create'])
@@ -57,13 +58,14 @@ export class LoginComponent implements OnInit {
 
           }, (err) => {
             this.spinner.hide();
-            console.log(err);
+            this.ErrorMessage = "Error : " + err  + " .Please tell admin about this error";
           });
 
         }
         else {
           this.spinner.hide();
-          console.log(userData.email + " is not valid");
+          //console.log(userData.email + " is not valid");
+          this.ErrorMessage = userData.email  + " is not allowed to access BreezeProposal";
         }
 
 
@@ -73,6 +75,6 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('now: ', _.now());
+   // console.log('now: ', _.now());
   }
 }

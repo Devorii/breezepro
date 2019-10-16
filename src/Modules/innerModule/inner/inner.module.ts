@@ -11,9 +11,9 @@ import { NewproposalComponent } from './innerComponents/home/newproposal/newprop
 import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { CreateProposalComponent } from './innerComponents/globalComponents/create-proposal/create-proposal.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-create/pdf-create.component';
-
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +23,17 @@ import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-creat
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent, PdfCreateComponent ],
+    ButtonComponent, CreateProposalComponent, PagenotfoundComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,
     CalendarModule,
-    NgMultiSelectDropDownModule.forRoot()
+    // NgMultiSelectDropDownModule.forRoot()
   
+  ],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+        JwtHelperService,{provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   
