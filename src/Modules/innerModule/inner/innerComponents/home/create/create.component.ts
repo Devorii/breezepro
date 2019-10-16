@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../../../../app/data.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create',
@@ -14,9 +15,9 @@ export class CreateComponent implements OnInit {
 
   @Input() formsdataforpost = { client_name: '', client_email: '' };
 
-  constructor(private data: DataService, private spinner: NgxSpinnerService) { }
-  formsdata = { client_name: '', client_email: '',id:'' };
- 
+  constructor(private data: DataService, private spinner: NgxSpinnerService, private toastr: ToastrService) { }
+  formsdata = { client_name: '', client_email: '', id: '' };
+
   selecteddata = { id: '', client_name: '', client_email: '' }
   modalName;
   ngOnInit() {
@@ -53,8 +54,8 @@ export class CreateComponent implements OnInit {
     this.selecteddata.id = modaldata.id
     this.selecteddata.client_name = modaldata.client_name
     this.selecteddata.client_email = modaldata.client_email
-   
-    
+
+
 
 
   }
@@ -68,18 +69,18 @@ export class CreateComponent implements OnInit {
     console.log(this.formsdata.client_email);
     console.log(this.formsdata.client_name);
 
-   
-   
+
+
   }
 
-  editdata()
-  {
+  editdata() {
     this.formsdata.id = this.selecteddata.id;
-    this.formsdata.client_name = this.selecteddata.client_name; 
+    this.formsdata.client_name = this.selecteddata.client_name;
     this.data.Editleads(this.formsdata).subscribe((result) => {
 
       console.log(result);
       if (result) {
+        this.showdupdate();
         this.getleads();
         this.spinner.hide();
       }
@@ -100,6 +101,7 @@ export class CreateComponent implements OnInit {
 
       console.log(result);
       if (result) {
+        this.showdelete();
         this.getleads();
         this.spinner.hide();
       }
@@ -110,11 +112,7 @@ export class CreateComponent implements OnInit {
       this.ErrorMessage = "Error : " + err + " .Please tell admin about this error";
     });
 
-
-
   }
-
-
 
   // Create Proposal button
   CreateProposal() {
@@ -133,6 +131,7 @@ export class CreateComponent implements OnInit {
 
         console.log(result);
         if (result) {
+          this.showSuccess();
           this.formsdataforpost.client_email = '';
           this.formsdataforpost.client_name = '';
           this.getleads();
@@ -152,29 +151,19 @@ export class CreateComponent implements OnInit {
       this.ErrorMessage = "Email or Name cannot be blank";
     }
 
+  }
 
-  // var specialElementHandler = { 
-  //       "#editor":(element, renderer)=>{ 
-  //         return true
-  //       }
-  //  }
- 
-  //  let doc = new jsPDF()
-  //  var myAll = website + " " + seo + " " + analytics    
+  showSuccess() {
+    this.toastr.success('Lead Created', 'Success');
+  }
 
-  //  doc.fromHTML(myAll, 15, 15, {
-  //    "width": 170, 
-  //    "elementHandler": specialElementHandler
-  //  })
-   
-  //  alert(doc.output('datauri').toString())
-  //   // doc.save(this.modalName + "_Proposal.pdf")
-  //   }
-  // }
+  showdelete() {
+    this.toastr.error('Lead Deleted', '');
+  }
 
 
-}
-
-
+  showdupdate() {
+    this.toastr.warning('Lead Updated', '');
+  }
 
 }
