@@ -3,7 +3,7 @@
 
 <div class="list-group" data-toggle="modal" data-target="#leadModal">
   <ul class="list-group-item" *ngFor="let leads of ListInfo"> 
-    <li class="ClientName" (click)="callNewModal(leads.id,leads.client_name)">{{leads.client_name}} {{leads.id}}</li> 
+    <li class="ClientName" (click)="callNewModal(leads)">{{leads.client_name}}</li> 
 
   </ul>
 </div>
@@ -25,12 +25,12 @@
         <h4 class="modal-title text-left" style="color: cornflowerblue">{{modalName}}</h4>
       </div>
       <div class="modal-body inputStyle">
-          <button class="text-left" (click)="edit()">Edit</button>
-          <button class="text-left" (click)="leadDelete(leads.id)" data-dismiss="modal">Delete</button>
+          <button class="text-left" data-toggle="modal" data-target="#myModal1" (click)="edit()">Edit</button>
+          <button class="text-left" (click)="leadDelete()" data-dismiss="modal">Delete</button>
           <button class="text-left">Create Proposal</button>
       </div>
     </div>
-  </div>
+  </div>  
 </div>
 
 </div>
@@ -49,18 +49,50 @@
               </div>
               <div class="modal-body inputStyle">
                   <label for="name">Name:</label>
-                <input class="modalInput" type="text"  #nameValue >
+                <input class="modalInput" type="text" name="name" [(ngModel)]="formsdataforpost.client_name" >
                 <label for="email">Email:</label>
-                <input class="modalInput" type="email"  #emailValue>
+                <input class="modalInput" type="email" name="email"  [(ngModel)]="formsdataforpost.client_email">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation(nameValue.value, emailValue.value)">Submit</button>
+                <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation()">Submit</button>
               </div>
             </div> 
           </div>
         </div>
       </div>
+
+
+
+      <div class="container"> 
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal1" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title text-center " >Edit Lead</h4>
+                </div>
+                <div class="modal-body inputStyle">
+                    <label for="name">Name:</label>
+                  <input class="modalInput" type="text" value={{selecteddata.client_name}}  [(ngModel)]="selecteddata.client_name">
+                  <label for="email">Email:</label>
+                  <input class="modalInput" type="email" value={{selecteddata.client_email}} [(ngModel)]="selecteddata.client_email">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="editdata()">Submit</button>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+  
+
+
 <!-- 
 
       <ngx-spinner
