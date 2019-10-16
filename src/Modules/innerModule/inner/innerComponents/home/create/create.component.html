@@ -25,7 +25,7 @@
         <h4 class="modal-title text-left" style="color: cornflowerblue">{{modalName}}</h4>
       </div>
       <div class="modal-body inputStyle">
-          <button class="text-left" data-toggle="modal" data-target="#myModal1" (click)="edit()">Edit</button>
+          <button class="text-left" data-toggle="modal" data-dismiss="modal" data-target="#myModal1" (click)="edit()">Edit</button>
           <button class="text-left" (click)="leadDelete()" data-dismiss="modal">Delete</button>
           <button class="text-left" data-dismiss="modal" data-toggle="modal" data-target="#createProposal">Create Proposal</button>
 
@@ -56,7 +56,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation()">Submit</button>
+                <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation()">Create</button>
               </div>
             </div> 
           </div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="editdata()">Submit</button>
+                  <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="editdata()">Update</button>
                 </div>
               </div> 
             </div>
