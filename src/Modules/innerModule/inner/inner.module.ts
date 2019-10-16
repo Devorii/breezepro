@@ -14,6 +14,7 @@ import { CreateProposalComponent } from './innerComponents/globalComponents/crea
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfou
   imports: [
     CommonModule,
     InnerRoutingModule,
-    CalendarModule
+    CalendarModule,
+    FormsModule
   
   ],
   providers: [

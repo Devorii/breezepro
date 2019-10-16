@@ -48,7 +48,7 @@ export class DataService {
   }
 
   Editleads(product): Observable<any> {
-    return this.http.post<any>(this.Urlendpoint + 'login', JSON.stringify(product), this.HttpHeaderOptions);
+    return this.http.put<any>(this.Urlendpoint + 'leads/'+product.id + '?' + product, JSON.stringify(product), this.HttpHeaderOptions);
   }
 
   Deleteleads(product): Observable<any> {
