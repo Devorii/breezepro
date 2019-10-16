@@ -15,6 +15,9 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-create/pdf-create.component';
+
 
 @NgModule({
   declarations: [
@@ -24,12 +27,14 @@ import { FormsModule } from '@angular/forms';
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent, PagenotfoundComponent ],
+    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot()
+
   
   ],
   providers: [

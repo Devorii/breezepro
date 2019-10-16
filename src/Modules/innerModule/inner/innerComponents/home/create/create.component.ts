@@ -48,15 +48,10 @@ export class CreateComponent implements OnInit {
 
   // //lead Modal injection
   callNewModal(modaldata) {
-
     this.modalName = modaldata.client_name
     this.selecteddata.id = modaldata.id
     this.selecteddata.client_name = modaldata.client_name
     this.selecteddata.client_email = modaldata.client_email
-   
-    
-
-
   }
 
 
@@ -67,9 +62,6 @@ export class CreateComponent implements OnInit {
     this.formsdata.client_name = this.selecteddata.client_name;
     console.log(this.formsdata.client_email);
     console.log(this.formsdata.client_name);
-
-   
-   
   }
 
   editdata()
