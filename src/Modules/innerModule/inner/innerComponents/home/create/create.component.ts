@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as jsPDF from "jspdf"
 
 
 @Component({
@@ -61,12 +62,28 @@ leadInformation(name, email){
     alert("Connect to DB")
     location.reload()
     }
-    // Create Proposal button
-    CreateProposal(){ 
 
+
+// Create Proposal button
+CreateProposal(website, seo, analytics){ 
+
+  var specialElementHandler = { 
+        "#editor":(element, renderer)=>{ 
+          return true
+        }
+   }
+ 
+   let doc = new jsPDF()
+   var myAll = website + " " + seo + " " + analytics    
+
+   doc.fromHTML(myAll, 15, 15, {
+     "width": 170, 
+     "elementHandler": specialElementHandler
+   })
+   
+   alert(doc.output('datauri').toString())
+    // doc.save(this.modalName + "_Proposal.pdf")
     }
-
-
   }
 
 

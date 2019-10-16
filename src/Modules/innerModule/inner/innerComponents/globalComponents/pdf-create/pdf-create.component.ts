@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import * as jsPDF from "jspdf"
 
 
 @Component({
@@ -10,19 +11,28 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 export class PdfCreateComponent implements OnInit {
   dropdownList = [];
   selectedItems = [];
-  dropdownSettings:IDropdownSettings  = {};
-  websitesText = document.getElementById("mWeb")
-  seoText = document.getElementById("mSEO")
-  analyticsText = document.getElementById("mAnalytics")
+  // COllecting for DB Test 
+  textCollection = []
 
+  // Create an key value object to collect input from the user
+  dataCollection = { 
+    id: 0, 
+    subject: "",
+    userText: ""
+  }
+  dropdownSettings:IDropdownSettings  = {};
+  
   ngOnInit() {
+  (document.querySelector('.mWeb') as HTMLElement).style.display = 'none';
+  (document.querySelector('.mSEO') as HTMLElement).style.display = 'none';
+  (document.querySelector('.mAnalytics') as HTMLElement).style.display = 'none';
     this.dropdownList = [
       { item_id: 1, item_text: 'websites' },
       { item_id: 2, item_text: 'SEO' },
       { item_id: 3, item_text: 'Analytics' },
 
     ];
-  
+
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
@@ -41,25 +51,21 @@ export class PdfCreateComponent implements OnInit {
 
     switch(item.item_id){
       case 1: 
-      
-      console.log("one")
+      (document.querySelector('.mWeb') as HTMLElement).style.display = 'block';
       break;
       case 2:
-          console.log("two")
+      (document.querySelector('.mSEO') as HTMLElement).style.display = 'block';
       break;
       case 3:
-          console.log("three")
+      (document.querySelector('.mAnalytics') as HTMLElement).style.display = 'block';
       break;
       default:
           console.log("default")
     } 
-
-
     console.log(item);
   }
   onSelectAll(items: any) {
     this.selectedItems.push(items)
     console.log(this.selectedItems);
   }
-
 }

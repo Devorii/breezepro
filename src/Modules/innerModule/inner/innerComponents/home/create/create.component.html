@@ -62,7 +62,7 @@
       </div>
 
 
-<!-- **************************** D ***************************************** -->
+<!-- **************************** Create New Proposal ***************************************** -->
 <div class="container">
     <!-- Modal -->
     <div class="modal fade" id="createProposal" role="dialog">
@@ -78,11 +78,32 @@
               <app-pdf-create></app-pdf-create>
 
 
+<div class="list-group">
+    
+        <div class="container mt-5 list-group-item mWeb">
+                <label id="mLabel" for="websites">Websites Proposal</label>
+                <textarea id="websites" rows="10" placeholder="Customize website proposal" #websiteInfo>
+                </textarea> 
+        </div>
+
+        <div class="container mt-5 list-group-item mSEO">
+                <label id="mLabel" for="SEO">SEO Proposal</label>
+                <textarea id="SEO" rows="10" placeholder="Customize website proposal" #SEOInfo>
+                </textarea> 
+        </div>
+
+        <div class="container mt-5 list-group-item mAnalytics">
+                <label id="mLabel" for="Analytics">Analytics Proposal</label>
+                <textarea id="Analytics" rows="10" placeholder="Customize website proposal" #analyticsInfo>
+                </textarea> 
+        </div>
+
+</div>
 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="leadInformation(nameValue.value, emailValue.value)">Submit</button>
+            <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="CreateProposal(websiteInfo.value, SEOInfo.value, analyticsInfo.value )">Submit</button>
           </div>
         </div> 
       </div>

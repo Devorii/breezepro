@@ -11,6 +11,10 @@ $PrimaryColor: #212440;
     text-align:center;
     display: flex;
     justify-content: center;
+
+    @media (min-width: 600px){
+       
+    }
 }
 label{ 
     margin-top: 2px;
@@ -51,5 +55,18 @@ width: 100vw;
 .mContain{ 
     display: flex;
     width: 100vw;
+
+}
+// document pdf info modal
+.mt-5{
+    margin-top: 5px;
+#mLabel{ 
+   color: #5774DB;
+}
+#websites,#SEO,#Analytics{
+        width: 100%;
+        border: 1px solid #F2F3F5;
+        border-radius: 10px;
+    }
 
 }
