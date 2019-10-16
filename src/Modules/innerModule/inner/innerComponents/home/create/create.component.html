@@ -1,5 +1,6 @@
 <!-- List view iteration -->
 <!-- <ejs-calendar></ejs-calendar> -->
+
 <div class="list-group" data-toggle="modal" data-target="#leadModal">
   <ul class="list-group-item" *ngFor="let leads of ListInfo"> 
     <li class="ClientName" (click)="callNewModal(leads)">{{leads.client_name}}</li> 
@@ -7,15 +8,13 @@
   </ul>
 </div>
 
-
-<!-- Universal Button -->
+<!-- Universal Button CREATE BTN -->
 <div id="btnAlign">
 <app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
 </div>
 
 
-
-
+<!-- **************************** CRUD FUNCTIONS ON LEAD ***************************************** -->
 <div class="container mContain">
 <!-- CRUD Modal | EDIT | DELETE | CREATE -->
 <div class="modal fade" id="leadModal" role="dialog">
@@ -36,9 +35,8 @@
 
 </div>
 
-
-<div class="container"> 
-
+<!-- **************************** CREATE NEW LEAD ***************************************** -->
+<div class="container">
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">

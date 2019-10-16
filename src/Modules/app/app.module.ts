@@ -8,7 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "angular-6-social-login";
 import { NgxSpinnerModule } from "ngx-spinner";
+<<<<<<< HEAD
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+=======
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+>>>>>>> c48801d9c1782dc836d8bcd14c492a9a2a520946
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -37,7 +42,11 @@ export function getAuthServiceConfigs() {
     FormsModule,
     SocialLoginModule,
     NgxSpinnerModule,
+<<<<<<< HEAD
     NgbModule
+=======
+    NgMultiSelectDropDownModule.forRoot()
+>>>>>>> c48801d9c1782dc836d8bcd14c492a9a2a520946
   
   ],
   providers: [{

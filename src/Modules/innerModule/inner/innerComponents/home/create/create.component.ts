@@ -147,10 +147,28 @@ export class CreateComponent implements OnInit {
     }
 
 
-  }
+  // var specialElementHandler = { 
+  //       "#editor":(element, renderer)=>{ 
+  //         return true
+  //       }
+  //  }
+ 
+  //  let doc = new jsPDF()
+  //  var myAll = website + " " + seo + " " + analytics    
+
+  //  doc.fromHTML(myAll, 15, 15, {
+  //    "width": 170, 
+  //    "elementHandler": specialElementHandler
+  //  })
+   
+  //  alert(doc.output('datauri').toString())
+  //   // doc.save(this.modalName + "_Proposal.pdf")
+  //   }
+  // }
 
 
 }
 
 
 
+}
