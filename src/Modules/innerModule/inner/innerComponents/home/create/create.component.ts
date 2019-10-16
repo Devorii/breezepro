@@ -68,7 +68,15 @@ export class CreateComponent implements OnInit {
     console.log(this.formsdata.client_email);
     console.log(this.formsdata.client_name);
 
-   this.data.Editleads(this.formsdata).subscribe((result) => {
+   
+   
+  }
+
+  editdata()
+  {
+    this.formsdata.id = this.selecteddata.id;
+    this.formsdata.client_name = this.selecteddata.client_name; 
+    this.data.Editleads(this.formsdata).subscribe((result) => {
 
       console.log(result);
       if (result) {
@@ -83,9 +91,7 @@ export class CreateComponent implements OnInit {
     });
 
 
-   
   }
-
 
   // Delete Button 
   leadDelete() {
