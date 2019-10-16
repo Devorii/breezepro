@@ -1,8 +1,8 @@
 <!-- List view iteration -->
 <!-- <ejs-calendar></ejs-calendar> -->
 <div class="list-group" data-toggle="modal" data-target="#leadModal">
-  <ul class="list-group-item" *ngFor="let leads of createLeads"> 
-    <li class="ClientName" (click)="callNewModal(leads.mID, leads.mName)">{{leads.mName}}</li> 
+  <ul class="list-group-item" *ngFor="let leads of ListInfo"> 
+    <li class="ClientName" (click)="callNewModal(leads.id,leads.client_name)">{{leads.client_name}} {{leads.id}}</li> 
 
   </ul>
 </div>
@@ -27,7 +27,7 @@
       </div>
       <div class="modal-body inputStyle">
           <button class="text-left" (click)="edit()">Edit</button>
-          <button class="text-left" (click)="leadDelete(leads.mID)" data-dismiss="modal">Delete</button>
+          <button class="text-left" (click)="leadDelete(leads.id)" data-dismiss="modal">Delete</button>
           <button class="text-left">Create Proposal</button>
       </div>
     </div>
@@ -63,3 +63,11 @@
           </div>
         </div>
       </div>
+<!-- 
+
+      <ngx-spinner
+      bdColor="rgba(51,51,51,0.8)"
+      size="medium"
+      color="#fff"
+      type="line-scale">
+      <p style="font-size: 20px; color: black">Creating Client...</p></ngx-spinner> -->
