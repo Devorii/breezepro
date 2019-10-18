@@ -133,9 +133,7 @@ export class CreateComponent implements OnInit {
     (document.querySelector('.content_Wrapper') as HTMLElement).style.display = 'none';
     (document.querySelector('.customPKG_page_Edit') as HTMLElement).style.display = 'block';
     this.cName = companyName
- 
-
-   console.log(companyName)
+    console.log(companyName)
   }
 
   //create lead
