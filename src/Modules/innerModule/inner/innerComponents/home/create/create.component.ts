@@ -19,16 +19,10 @@ export class CreateComponent implements OnInit {
   submitted = false; //new
 
   @Input() formsdataforpost = { client_name: '', client_email: '' };
-<<<<<<< HEAD
-  constructor(private data: DataService, private spinner: NgxSpinnerService) { }
-  formsdata = { client_name: '', client_email: '',id:'' };
- 
-=======
 
   constructor(private data: DataService, private spinner: NgxSpinnerService, private toastr: ToastrService,private formBuilder: FormBuilder) { }
   formsdata = { client_name: '', client_email: '', id: '' };
 
->>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   selecteddata = { id: '', client_name: '', client_email: '' }
   modalName;
   ngOnInit() {
@@ -66,13 +60,10 @@ export class CreateComponent implements OnInit {
     this.selecteddata.id = modaldata.id
     this.selecteddata.client_name = modaldata.client_name
     this.selecteddata.client_email = modaldata.client_email
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   }
 
 
@@ -83,12 +74,9 @@ export class CreateComponent implements OnInit {
     this.formsdata.client_name = this.selecteddata.client_name;
     console.log(this.formsdata.client_email);
     console.log(this.formsdata.client_name);
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   }
 
   editdata() {
@@ -197,9 +185,6 @@ export class CreateComponent implements OnInit {
   }
 
 
-<<<<<<< HEAD
-}
-=======
   showdupdate() {
     this.toastr.warning('Lead Updated', '');
   }
@@ -209,5 +194,4 @@ export class CreateComponent implements OnInit {
     this.toastr.error(error, 'error');
   }
 
->>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
 }

@@ -15,17 +15,14 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-create/pdf-create.component';
 import { GlobalMultiselectorComponent } from './innerComponents/globalComponents/global-multiselector/global-multiselector.component';
 
 
-=======
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
->>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -40,14 +37,10 @@ import { CustomFormsModule } from 'ng2-validation';
     InnerRoutingModule,
     CalendarModule,
     FormsModule,
-<<<<<<< HEAD
-    NgMultiSelectDropDownModule.forRoot()
-
-=======
+    NgMultiSelectDropDownModule.forRoot(),
     NgxSpinnerModule,
     ReactiveFormsModule,
     CustomFormsModule
->>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   
   ],
   providers: [
