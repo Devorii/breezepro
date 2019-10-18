@@ -15,7 +15,9 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -29,7 +31,10 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     InnerRoutingModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule,
+    ReactiveFormsModule,
+    CustomFormsModule
   
   ],
   providers: [
