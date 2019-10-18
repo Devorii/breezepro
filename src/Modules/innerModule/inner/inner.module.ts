@@ -17,6 +17,7 @@ import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfou
 import { FormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-create/pdf-create.component';
+import { GlobalMultiselectorComponent } from './innerComponents/globalComponents/global-multiselector/global-multiselector.component';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-creat
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent ],
+    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent, GlobalMultiselectorComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,

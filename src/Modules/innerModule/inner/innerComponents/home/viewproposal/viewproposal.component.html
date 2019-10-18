@@ -1,4 +1,13 @@
-<p>viewproposal works!</p>
+<h4 class="text-center">{{companyName}}</h4>
+<h4 class="text-center">test: {{companyPackage}}</h4>
 
-<a class="small" [routerLink]="['../new']">Back</a> 
+
+<!-- multiselector -->
+<div class="selectProds">
+        <app-global-multiselector></app-global-multiselector>
+</div>
+
+
+<a class="small" (click)="tryThis()" >Back</a> 
 <!-- <a class="small" [routerLink]="['/dashboard/view']">Next</a> -->
+<!-- [routerLink]="['../dashboard/create']" --> 

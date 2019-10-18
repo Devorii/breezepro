@@ -11,9 +11,9 @@ export class CreateComponent implements OnInit {
   ErrorMessage;
   ListInfo: any[];
   modalid;
+  cName:string
 
   @Input() formsdataforpost = { client_name: '', client_email: '' };
-
   constructor(private data: DataService, private spinner: NgxSpinnerService) { }
   formsdata = { client_name: '', client_email: '',id:'' };
  
@@ -28,25 +28,18 @@ export class CreateComponent implements OnInit {
   getleads() {
     this.spinner.show();
     this.data.Getleads().subscribe((result) => {
-
       console.log(result);
       if (result) {
         this.ListInfo = result.data
         this.spinner.hide();
       }
-
-
     }, (err) => {
       this.spinner.hide();
       this.ErrorMessage = "Error : " + err + " .Please tell admin about this error";
     });
   }
 
-
-
-
-
-  // //lead Modal injection
+  s//lead Modal injection
   callNewModal(modaldata) {
     this.modalName = modaldata.client_name
     this.selecteddata.id = modaldata.id
@@ -109,8 +102,13 @@ export class CreateComponent implements OnInit {
 
 
   // Create Proposal button
-  CreateProposal() {
+  CreateProposal(companyName) {
+    (document.querySelector('.content_Wrapper') as HTMLElement).style.display = 'none';
+    (document.querySelector('.customPKG_page_Edit') as HTMLElement).style.display = 'block';
+    this.cName = companyName
+ 
 
+   console.log(companyName)
   }
 
   //create lead
@@ -166,7 +164,4 @@ export class CreateComponent implements OnInit {
 
 
 }
-
-
-
 }

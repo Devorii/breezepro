@@ -14,7 +14,7 @@ const routes: Routes = [
 
     { path: 'dashboard/create', component: CreateComponent,canActivate: [AuthGuard] },
     { path: 'dashboard/new', component: NewproposalComponent,canActivate: [AuthGuard] },
-    { path: 'dashboard/view', component: ViewproposalComponent,canActivate: [AuthGuard] }
+    { path: 'dashboard/view', component: ViewproposalComponent,canActivate: [AuthGuard] },
    
 
   ] },

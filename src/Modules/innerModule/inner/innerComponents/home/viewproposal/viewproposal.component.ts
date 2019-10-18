@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ComponentDataPassingService } from '../../../../../app/component-data-passing.service';
 
 @Component({
   selector: 'app-viewproposal',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewproposalComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private componentServiceCollection:ComponentDataPassingService ) { 
+    
   }
 
+  ngOnInit() {
+    
+  }
+  @Input() companyName:string
+
+  tryThis(){ 
+    var companyPackage = this.componentServiceCollection.getMultiSelectOptions();
+    console.log(companyPackage)
+  }
+  
+  
 }
