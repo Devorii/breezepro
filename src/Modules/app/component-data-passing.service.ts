@@ -31,5 +31,4 @@ export class ComponentDataPassingService {
     return console.log(this.testing)
   }
 
-hi = "Hello World"
 }

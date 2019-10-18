@@ -38,22 +38,6 @@ export class PdfCreateComponent implements OnInit {
      * IF ITEM ID == TO ID IN THE DB THEN DISPLAY TEXTAREA
      */
 
-    switch(item.item_id){
-      case 1: 
-  
-      break;
-      case 2:
-      
-      break;
-      case 3:
-      
-      break;
-      case 4:
-      
-      break;
-      default:
-          console.log("default")
-    } 
     console.log(item);
   }
   onSelectAll(items: any) {
