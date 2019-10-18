@@ -60,10 +60,6 @@ export class CreateComponent implements OnInit {
     this.selecteddata.id = modaldata.id
     this.selecteddata.client_name = modaldata.client_name
     this.selecteddata.client_email = modaldata.client_email
-
-
-
-
   }
 
 
