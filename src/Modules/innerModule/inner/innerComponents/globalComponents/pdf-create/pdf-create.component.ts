@@ -28,8 +28,6 @@ export class PdfCreateComponent implements OnInit {
       singleSelection: false,
       idField: 'item_id',
       textField: 'item_text',
-      selectAllText: 'Select All',
-      unSelectAllText: 'UnSelect All',
       limitSelection: 1,
       itemsShowLimit: 3,
       allowSearchFilter: true
