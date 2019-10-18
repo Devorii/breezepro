@@ -141,9 +141,7 @@ export class CreateComponent implements OnInit {
   //create lead
   leadInformation() {
 
-    if (this.registerForm.invalid) {
-      return;
-      }
+    
     this.spinner.show();
     this.formsdata.client_email = this.formsdataforpost.client_email;
     this.formsdata.client_name = this.formsdataforpost.client_name;
