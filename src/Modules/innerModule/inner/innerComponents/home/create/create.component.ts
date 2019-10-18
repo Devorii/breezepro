@@ -3,6 +3,7 @@ import { DataService } from '../../../../../app/data.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; //newly
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 @Component({
   selector: 'app-create',
@@ -14,6 +15,10 @@ export class CreateComponent implements OnInit {
   ListInfo: any[];
   modalid;
   cName:string
+
+  dropdownList = [];
+  selectedItems_: any;
+  dropdownSettings:IDropdownSettings  = {};
 
   registerForm: FormGroup; //new
   submitted = false; //new
@@ -27,6 +32,7 @@ export class CreateComponent implements OnInit {
   modalName;
   ngOnInit() {
     this.spinner.show();
+    this.initialize();
     this.getleads();
     this.registerForm = this.formBuilder.group({ //new
       client_name: ['', Validators.required],
@@ -34,6 +40,21 @@ export class CreateComponent implements OnInit {
      });
 
   }
+
+  initialize()
+  {
+   
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'id',
+      textField: 'package_name',
+      limitSelection: 1,
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
+  }
+
+  
 
   get fval() {
     return this.registerForm.controls; //new 
@@ -54,8 +75,9 @@ export class CreateComponent implements OnInit {
     });
   }
 
-  s//lead Modal injection
+  //lead Modal injection
   callNewModal(modaldata) {
+    
     this.modalName = modaldata.client_name
     this.selecteddata.id = modaldata.id
     this.selecteddata.client_name = modaldata.client_name
@@ -130,9 +152,10 @@ export class CreateComponent implements OnInit {
 
   // Create Proposal button
   CreateProposal(companyName) {
+    
     (document.querySelector('.content_Wrapper') as HTMLElement).style.display = 'none';
     (document.querySelector('.customPKG_page_Edit') as HTMLElement).style.display = 'block';
-    this.cName = companyName
+    this.cName = companyName;
     console.log(companyName)
   }
 
@@ -171,6 +194,29 @@ export class CreateComponent implements OnInit {
     }
 
   }
+
+
+
+  getdropdown() {
+ 
+    this.data.Getdropdwonlist().subscribe((result) => {
+      //console.log(result);
+      if (result) {
+        this.dropdownList = result.data
+        this.spinner.hide();
+      }
+    }, (err) => {
+      this.spinner.hide();
+      this.ErrorMessage = "Error : " + err + " .Please tell admin about this error";
+    });
+  }
+
+  onItemSelect(item: any) {
+    this.selectedItems_ = item.id
+    console.log(this.selectedItems_);
+  }
+
+  
 
   showSuccess() {
     this.toastr.success('Lead Created', 'Success');
