@@ -11,7 +11,9 @@ import * as jsPDF from "jspdf"
 
 export class PdfCreateComponent implements OnInit {
   dropdownList = [];
-  selectedItems = [];
+  allSelectedItems = [];
+  individualSelectedItems = []
+  selectedItems_: any;
   dropdownSettings:IDropdownSettings  = {};
   
   ngOnInit() {
@@ -28,20 +30,19 @@ export class PdfCreateComponent implements OnInit {
       textField: 'item_text',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
+      limitSelection: 1,
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
   }
 
   onItemSelect(item: any) {
-    /**
-     * IF ITEM ID == TO ID IN THE DB THEN DISPLAY TEXTAREA
-     */
-
-    console.log(item);
+    this.selectedItems_ = this.individualSelectedItems.push(item.item_text)
+    console.log(this.selectedItems_);
   }
+
   onSelectAll(items: any) {
-    this.selectedItems.push(items)
-    console.log(this.selectedItems);
+    this.allSelectedItems.push(items)
+    console.log(this.allSelectedItems);
   }
 }
