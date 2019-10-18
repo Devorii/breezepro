@@ -17,9 +17,11 @@ export class ViewproposalComponent implements OnInit {
   }
   @Input() companyName:string
 
-  tryThis(){ 
-    var companyPackage = this.componentServiceCollection.getMultiSelectOptions();
-    console.log(companyPackage)
+  tryThis(){
+    (document.querySelector('.content_Wrapper') as HTMLElement).style.display = 'block';
+    (document.querySelector('.customPKG_page_Edit') as HTMLElement).style.display = 'none'; 
+    // var companyPackage = this.componentServiceCollection.getMultiSelectOptions();
+    // console.log(companyPackage)
   }
   
   

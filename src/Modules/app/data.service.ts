@@ -38,6 +38,9 @@ export class DataService {
       })
     };
   }
+
+
+  
   public isAuthenticated(): boolean {
 
     // Check whether the token is expired and return
@@ -53,6 +56,11 @@ export class DataService {
      return this.http.get<any>(this.Urlendpoint + 'leads', this.HttpHeaderOptions);
     //return this.http.get(this.Urlendpoint + 'leads',this.HttpHeaderOptions);
   }
+
+  Getdropdwonlist(): Observable<any> {
+    return this.http.get<any>(this.Urlendpoint + 'packages', this.HttpHeaderOptions);
+   //return this.http.get(this.Urlendpoint + 'leads',this.HttpHeaderOptions);
+ }
 
   Createleads(product): Observable<any> {
     return this.http.post<any>(this.Urlendpoint + 'leads', JSON.stringify(product), this.HttpHeaderOptions);
