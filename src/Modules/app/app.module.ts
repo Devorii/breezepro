@@ -10,8 +10,10 @@ import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "angular-6
 import { NgxSpinnerModule } from "ngx-spinner";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-
-
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
     [
@@ -40,7 +42,17 @@ export function getAuthServiceConfigs() {
     SocialLoginModule,
     NgxSpinnerModule,
     NgbModule,
-    NgMultiSelectDropDownModule.forRoot()
+    CommonModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+    timeOut: 3000,
+    positionClass: 'toast-top-right',
+    preventDuplicates: true,
+    easeTime:300,
+    tapToDismiss:true,
+    }),
+    ReactiveFormsModule,
   
   ],
   providers: [{

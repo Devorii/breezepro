@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../../../../app/data.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; //newly
 
 @Component({
   selector: 'app-create',
@@ -13,20 +15,39 @@ export class CreateComponent implements OnInit {
   modalid;
   cName:string
 
+  registerForm: FormGroup; //new
+  submitted = false; //new
+
   @Input() formsdataforpost = { client_name: '', client_email: '' };
+<<<<<<< HEAD
   constructor(private data: DataService, private spinner: NgxSpinnerService) { }
   formsdata = { client_name: '', client_email: '',id:'' };
  
+=======
+
+  constructor(private data: DataService, private spinner: NgxSpinnerService, private toastr: ToastrService,private formBuilder: FormBuilder) { }
+  formsdata = { client_name: '', client_email: '', id: '' };
+
+>>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   selecteddata = { id: '', client_name: '', client_email: '' }
   modalName;
   ngOnInit() {
-
+    this.spinner.show();
     this.getleads();
+    this.registerForm = this.formBuilder.group({ //new
+      client_name: ['', Validators.required],
+      client_email: ['', [Validators.required,Validators.email]],
+     });
+
   }
+
+  get fval() {
+    return this.registerForm.controls; //new 
+    }
 
 
   getleads() {
-    this.spinner.show();
+    //this.spinner.show();
     this.data.Getleads().subscribe((result) => {
       console.log(result);
       if (result) {
@@ -45,6 +66,13 @@ export class CreateComponent implements OnInit {
     this.selecteddata.id = modaldata.id
     this.selecteddata.client_name = modaldata.client_name
     this.selecteddata.client_email = modaldata.client_email
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   }
 
 
@@ -55,18 +83,32 @@ export class CreateComponent implements OnInit {
     this.formsdata.client_name = this.selecteddata.client_name;
     console.log(this.formsdata.client_email);
     console.log(this.formsdata.client_name);
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
   }
 
-  editdata()
-  {
+  editdata() {
+    this.spinner.show();
+    this.formsdata.client_email = this.selecteddata.client_email;
     this.formsdata.id = this.selecteddata.id;
-    this.formsdata.client_name = this.selecteddata.client_name; 
+    this.formsdata.client_name = this.selecteddata.client_name;
     this.data.Editleads(this.formsdata).subscribe((result) => {
 
       console.log(result);
-      if (result) {
+      if (result.success == true) {
+        this.showdupdate();
         this.getleads();
         this.spinner.hide();
+      }
+      else
+      {
+        this.spinner.hide();
+        this.ErrorMessage = "Error : " + result.message;
+        this.showderror(this.ErrorMessage);
       }
 
 
@@ -80,11 +122,12 @@ export class CreateComponent implements OnInit {
 
   // Delete Button 
   leadDelete() {
-
+    this.spinner.show();
     this.data.Deleteleads(this.selecteddata.id).subscribe((result) => {
 
       console.log(result);
       if (result) {
+        this.showdelete();
         this.getleads();
         this.spinner.hide();
       }
@@ -95,11 +138,7 @@ export class CreateComponent implements OnInit {
       this.ErrorMessage = "Error : " + err + " .Please tell admin about this error";
     });
 
-
-
   }
-
-
 
   // Create Proposal button
   CreateProposal(companyName) {
@@ -113,6 +152,10 @@ export class CreateComponent implements OnInit {
 
   //create lead
   leadInformation() {
+
+    if (this.registerForm.invalid) {
+      return;
+      }
     this.spinner.show();
     this.formsdata.client_email = this.formsdataforpost.client_email;
     this.formsdata.client_name = this.formsdataforpost.client_name;
@@ -123,6 +166,7 @@ export class CreateComponent implements OnInit {
 
         console.log(result);
         if (result) {
+          this.showSuccess();
           this.formsdataforpost.client_email = '';
           this.formsdataforpost.client_name = '';
           this.getleads();
@@ -142,26 +186,28 @@ export class CreateComponent implements OnInit {
       this.ErrorMessage = "Email or Name cannot be blank";
     }
 
+  }
 
-  // var specialElementHandler = { 
-  //       "#editor":(element, renderer)=>{ 
-  //         return true
-  //       }
-  //  }
- 
-  //  let doc = new jsPDF()
-  //  var myAll = website + " " + seo + " " + analytics    
+  showSuccess() {
+    this.toastr.success('Lead Created', 'Success');
+  }
 
-  //  doc.fromHTML(myAll, 15, 15, {
-  //    "width": 170, 
-  //    "elementHandler": specialElementHandler
-  //  })
-   
-  //  alert(doc.output('datauri').toString())
-  //   // doc.save(this.modalName + "_Proposal.pdf")
-  //   }
-  // }
+  showdelete() {
+    this.toastr.error('Lead Deleted', '');
+  }
 
 
+<<<<<<< HEAD
 }
+=======
+  showdupdate() {
+    this.toastr.warning('Lead Updated', '');
+  }
+
+
+  showderror(error) {
+    this.toastr.error(error, 'error');
+  }
+
+>>>>>>> 551c5f0bf6d3eec6f7de35828146c255439a06c4
 }

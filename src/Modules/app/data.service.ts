@@ -27,6 +27,17 @@ export class DataService {
       };
   }
 
+
+  setheader()
+  {
+    console.log("called");
+    this.HttpHeaderOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'multipart/form-data, application/json',
+        'Authorization': 'Bearer ' + localStorage.googletoken
+      })
+    };
+  }
   public isAuthenticated(): boolean {
 
     // Check whether the token is expired and return
