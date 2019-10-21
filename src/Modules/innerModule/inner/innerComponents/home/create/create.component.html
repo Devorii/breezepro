@@ -1,23 +1,27 @@
 <!-- List view iteration -->
 <!-- <ejs-calendar></ejs-calendar> -->
 <div class="content_Wrapper">
-
   <div class="list-group" data-toggle="modal" data-target="#leadModal">
     <ngx-spinner [fullScreen]="false" type="line-scale" size="medium">
       <p class="loading">Loading...</p>
     </ngx-spinner>
     <ul class="list-group-item" *ngFor="let leads of ListInfo">
-
-      <li class="ClientName" (click)="callNewModal(leads)">{{leads.client_name}}</li>
-
+      <li class="ClientName" (click)="callNewModal(leads)">
+        {{ leads.client_name }}
+      </li>
     </ul>
   </div>
 
   <!-- Universal Button CREATE BTN -->
   <div id="btnAlign">
-    <app-button id="createBtn" btnInfo="Create" name="btnDark" data-toggle="modal" data-target="#myModal"></app-button>
+    <app-button
+      id="createBtn"
+      btnInfo="Create"
+      name="btnDark"
+      data-toggle="modal"
+      data-target="#myModal"
+    ></app-button>
   </div>
-
 
   <!-- **************************** CRUD FUNCTIONS ON LEAD ***************************************** -->
   <div class="container mContain">
@@ -27,14 +31,36 @@
         <div class="modal-content">
           <div class="modal-header">
             <!-- collect selected lead title -->
-            <h4 class="modal-title text-left" style="color: cornflowerblue">{{modalName}}</h4>
+            <h4 class="modal-title text-left" style="color: cornflowerblue">
+              {{ modalName }}
+            </h4>
           </div>
           <div class="modal-body inputStyle">
-            <button class="text-left" data-toggle="modal" data-dismiss="modal" data-target="#myModal1"
-              (click)="edit()">Edit</button>
-            <button class="text-left" (click)="leadDelete()" data-dismiss="modal">Delete</button>
-            <button class="text-left" data-toggle="modal" data-dismiss="modal" (click)="getdropdown()" data-target="#createProposal">Create
-              Proposal</button>
+            <button
+              class="text-left"
+              data-toggle="modal"
+              data-dismiss="modal"
+              data-target="#myModal1"
+              (click)="edit()"
+            >
+              Edit
+            </button>
+            <button
+              class="text-left"
+              (click)="leadDelete()"
+              data-dismiss="modal"
+            >
+              Delete
+            </button>
+            <button
+              class="text-left"
+              data-toggle="modal"
+              data-dismiss="modal"
+              (click)="getdropdown()"
+              data-target="#createProposal"
+            >
+              Create Proposal
+            </button>
           </div>
         </div>
       </div>
@@ -46,23 +72,42 @@
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
             <h4 class="modal-title text-center ">Create New Lead</h4>
           </div>
           <div class="modal-body inputStyle">
             <label for="name">Name:</label>
-            <input class="modalInput" type="text" name="name" [(ngModel)]="formsdataforpost.client_name">
+            <input
+              class="modalInput"
+              type="text"
+              name="name"
+              [(ngModel)]="formsdataforpost.client_name"
+            />
             <label for="email">Email:</label>
-            <input class="modalInput" type="email" name="email" [(ngModel)]="formsdataforpost.client_email">
+            <input
+              class="modalInput"
+              type="email"
+              name="email"
+              [(ngModel)]="formsdataforpost.client_email"
+            />
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-default" data-dismiss="modal"
-              (click)="leadInformation()">Create</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-default"
+              data-dismiss="modal"
+              (click)="leadInformation()"
+            >
+              Create
+            </button>
           </div>
         </div>
       </div>
@@ -72,77 +117,98 @@
 <form [formGroup]="registerForm" (ngSubmit)="editdata();"> -->
 
   <div class="container">
-
     <!-- Modal -->
     <div class="modal fade" id="myModal1" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
             <h4 class="modal-title text-center ">Edit Lead</h4>
           </div>
           <div class="modal-body inputStyle">
-
             <label for="name">Name:</label>
-            <input class="modalInput" type="text" [(ngModel)]="selecteddata.client_name">
+            <input
+              class="modalInput"
+              type="text"
+              [(ngModel)]="selecteddata.client_name"
+            />
 
             <label for="email">Email:</label>
-            <input class="modalInput" type="email" value={{selecteddata.client_email}}
-              [(ngModel)]="selecteddata.client_email">
-
+            <input
+              class="modalInput"
+              type="email"
+              value="{{ selecteddata.client_email }}"
+              [(ngModel)]="selecteddata.client_email"
+            />
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="editdata()">Update</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-default"
+              data-dismiss="modal"
+              (click)="editdata()"
+            >
+              Update
+            </button>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-
 
   <!--  Create Proposal Modal -->
   <div class="modal fade" id="createProposal" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
           <h4 class="modal-title text-center ">Create Proposal</h4>
         </div>
         <div class="modal-body inputStyle">
           <!-- Fill Inside -->
-          <label for="companyName" >Company Name</label>  
-                        <input type="text" name="companyName" id="cName" #companyName>
-                      <ng-multiselect-dropdown [placeholder]="'Select Client Packages'" [data]="dropdownList"
-            [(ngModel)]="selectedItems" [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
-            (onSelectAll)="onSelectAll($event)">
+          <label for="companyName">Company Name</label>
+          <input type="text" name="companyName" id="cName" #companyName />
+          <ng-multiselect-dropdown
+            [placeholder]="'Select Client Packages'"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+          >
           </ng-multiselect-dropdown>
-
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="CreateProposal(companyName.value)">Submit</button>
-
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="submit"
+            class="btn btn-default"
+            data-dismiss="modal"
+            (click)="CreateProposal(companyName.value)"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
-
-
-  
 <!--  **************************** Create New Proposal ***************************************** -->
-       
+
 <!-- Creating a state type action not sure if this is the best way to do this in Angular. -->
 
-<div class="customPKG_page_Edit">
-  <app-viewproposal companyName={{cName}}></app-viewproposal>
+<div class="customPKG_page_Edit">
+  <app-viewproposal companyName="{{ cName }}"></app-viewproposal>
 </div>
-      

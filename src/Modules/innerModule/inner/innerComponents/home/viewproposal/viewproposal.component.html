@@ -1,11 +1,22 @@
-<h4 class="text-center">{{companyName}}</h4>
+<h4 class="text-center">{{ companyName }}</h4>
 
 <!-- multiselector -->
 <div class="selectProds">
-        <app-global-multiselector></app-global-multiselector>
+  <app-global-multiselector></app-global-multiselector>
 </div>
 
+<div class="container prod_alignment mt-5">
+  <div class="productSelection_List_">
+    <h5 class="text-center">Product Chosen</h5>
+  </div>
+  <div class="productSelection_List_">
+    <h5 class="text-center">Product Chosen</h5>
+  </div>
+  <div class="productSelection_List_">
+    <h5 class="text-center">Product Chosen</h5>
+  </div>
+</div>
 
-<a class="small" (click)="tryThis()" >Back</a> 
+<a class="small" (click)="tryThis()">Back</a>
 <!-- <a class="small" [routerLink]="['/dashboard/view']">Next</a> -->
-<!-- [routerLink]="['../dashboard/create']" --> 
+<!-- [routerLink]="['../dashboard/create']" -->

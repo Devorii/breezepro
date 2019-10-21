@@ -23,17 +23,8 @@ export class PdfCreateComponent implements OnInit {
   ErrorMessage;
   ngOnInit() {
 
-
     this.getdropdown();
-
-
-    // this.dropdownList = [
-    //   { item_id: 1, item_text: 'Sun' },
-    //   { item_id: 2, item_text: 'Moon' },
-    //   { item_id: 3, item_text: 'Stars' },
-    //   { item_id: 4, item_text: 'Custom' }
-    // ];
-
+    
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'id',
