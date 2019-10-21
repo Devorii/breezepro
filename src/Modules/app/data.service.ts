@@ -74,6 +74,11 @@ export class DataService {
     return this.http.delete<any>(this.Urlendpoint + 'leads/'+product, this.HttpHeaderOptions);
   }
 
+  GetProductlist(product): Observable<any> {
+    return this.http.post<any>(this.Urlendpoint + 'products', JSON.stringify(product), this.HttpHeaderOptions);
+   //return this.http.get(this.Urlendpoint + 'leads',this.HttpHeaderOptions);
+ }
+
 }
 
 

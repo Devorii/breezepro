@@ -210,5 +210,26 @@
 <!-- Creating a state type action not sure if this is the best way to do this in Angular. -->
 
 <div class="customPKG_page_Edit">
+<<<<<<< HEAD
   <app-viewproposal companyName="{{ cName }}"></app-viewproposal>
+=======
+  <h4 class="text-center">{{ cName }}</h4>
+  <h4 class="text-center">{{ CID }}</h4>
+
+  <!-- multiselector -->
+  <div class="selectProds">
+    <ng-multiselect-dropdown
+      [placeholder]="'Select Client Packages'"
+      [data]="dropdownList2"
+      [(ngModel)]="selectedItems1"
+      [settings]="dropdownSettings2"
+      (onSelect)="onItemSelect1($event)"
+      (onDeSelect)="onItemDeselect($event)"
+      (onSelectAll)="onSelectAll($event)"
+    >
+    </ng-multiselect-dropdown>
+  </div>
+
+  <a class="small" (click)="tryThis()">Back</a>
+>>>>>>> 76f06df854e7e8f570dc70e56525ec4b0caf42d8
 </div>
