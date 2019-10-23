@@ -23,6 +23,8 @@ import { GlobalMultiselectorComponent } from './innerComponents/globalComponents
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { DescriptionComponent } from './innerComponents/home/description/description.component';
+import { InvestmentComponent } from './innerComponents/home/investment/investment.component';
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -31,7 +33,7 @@ import { CustomFormsModule } from 'ng2-validation';
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent, GlobalMultiselectorComponent ],
+    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent, GlobalMultiselectorComponent, DescriptionComponent, InvestmentComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,

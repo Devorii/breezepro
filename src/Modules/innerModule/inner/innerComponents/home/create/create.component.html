@@ -213,6 +213,8 @@
   <h4 class="text-center">{{ cName }}</h4>
   <h4 class="text-center">{{ CID }}</h4>
 
+
+
   <!-- multiselector -->
   <div class="selectProds">
     <ng-multiselect-dropdown
@@ -227,5 +229,12 @@
     </ng-multiselect-dropdown>
   </div>
 
+  <button
+  type="submit"
+  class="btn btn-default"
+  (click)="Verify()"
+>
+  Submit
+</button>
   <a class="small" (click)="tryThis()">Back</a>
 </div>

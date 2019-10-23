@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container row">
+    <form (submit)="Add(product.value,amount.value)">
+        <div class="col-xs-5">
+            <label>Product</label>
+            <input type="text" class="form-control" placeholder="Product" #product [(ngModel)]="productclear"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-xs-5">
+            <label>Amount (in dollars)</label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" (keypress)="numberOnly($event)" id="exampleInputAmount"
+                    placeholder="" #amount [(ngModel)]="amountclear" [ngModelOptions]="{standalone: true}">
+                <div class="input-group-addon">.00</div>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <label>Add</label>
+            <button class="form-control" placeholder=".col-xs-4">+</button>
+        </div>
+
+    </form>
+
+
+<br>
+<div class="row"></div>
+<div style="padding-left: 15px; padding-top: 10px;"><b><span style="align-content:left">Product Name</span> <span style="position: absolute;right: 15%;">Price</span>
+        <span style="position: absolute;right: 15px;"></span></b></div>
+
+<div class="list-group">
+
+
+    <ul class="list-group-item" *ngFor="let data of formData">
+
+        <li class="">
+            <span style="align-content:left">{{ data.productname }}</span> <span
+                style="position: absolute;right: 15%;">{{ data.amount }}</span>
+            <span style="position: absolute;right: 15px;"> <a (click)="onItemDeselect(data)" class="delete"><i
+                        class="fa fa-trash"></i></a></span>
+        </li>
+    </ul>
+</div>
+<div style="position: absolute;bottom:15px;right: 45%;padding-bottom: 15px;font-size: 20px;">
+    <a href="#" class="next" (click)="next()" >Next</a>
+</div>
+</div>
+<br>
