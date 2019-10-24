@@ -80,8 +80,8 @@ export class DescriptionComponent implements OnInit {
     console.log(this.formData);
   }
 
-  next(){
-    
-    this.router.navigate(['dashboard/investment'])
+  nextpage(){
+    this.storedata.pricingList = this.formData;
+    this.router.navigate(['dashboard/investment']);
   }
 }

@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { DescriptionComponent } from './innerComponents/home/description/description.component';
 import { InvestmentComponent } from './innerComponents/home/investment/investment.component';
+import {MatDatepickerModule,MatNativeDateModule } from '@angular/material'
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -42,7 +43,9 @@ import { InvestmentComponent } from './innerComponents/home/investment/investmen
     NgMultiSelectDropDownModule.forRoot(),
     NgxSpinnerModule,
     ReactiveFormsModule,
-    CustomFormsModule
+    CustomFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
   
   ],
   providers: [

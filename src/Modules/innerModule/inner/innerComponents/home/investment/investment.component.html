@@ -1,1 +1,14 @@
-<p>investment works!</p>
+<div class="form-group container">
+  <label for="comment">Investment Details:</label>
+  <textarea class="form-control" rows="9" id="comment"></textarea>
+
+  <mat-form-field style="position: absolute;right: 24%;">
+    <input matInput [matDatepicker]="picker" style="border-top: none;border-right: none;border-left: none; text-align: center;" placeholder="Date of meeting" readonly />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div style="position: absolute;bottom:15px;right: 45%;padding-bottom: 15px;font-size: 20px;">
+        <a class="next" (click)="nextpage()" >SEND</a>
+    </div>
+</div>

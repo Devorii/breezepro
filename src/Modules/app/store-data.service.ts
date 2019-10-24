@@ -13,7 +13,7 @@ companyName;
 clientId;
 packageId;
 productId =[];
-
+pricingList = [];
   UserDetails(product) {
   
   }
