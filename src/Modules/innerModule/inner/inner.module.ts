@@ -25,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { DescriptionComponent } from './innerComponents/home/description/description.component';
 import { InvestmentComponent } from './innerComponents/home/investment/investment.component';
-import {MatDatepickerModule,MatNativeDateModule } from '@angular/material'
+import {MatDatepickerModule,MatNativeDateModule } from '@angular/material';
+import { ThankyouComponent } from './innerComponents/home/thankyou/thankyou.component'
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -34,7 +35,7 @@ import {MatDatepickerModule,MatNativeDateModule } from '@angular/material'
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent, GlobalMultiselectorComponent, DescriptionComponent, InvestmentComponent ],
+    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent, GlobalMultiselectorComponent, DescriptionComponent, InvestmentComponent, ThankyouComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,

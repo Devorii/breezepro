@@ -1,9 +1,9 @@
 <div class="form-group container">
   <label for="comment">Investment Details:</label>
-  <textarea class="form-control" rows="9" id="comment"></textarea>
+  <textarea class="form-control" rows="9" id="comment" [(ngModel)]="formsdataforpost.details"></textarea>
 
   <mat-form-field style="position: absolute;right: 24%;">
-    <input matInput [matDatepicker]="picker" style="border-top: none;border-right: none;border-left: none; text-align: center;" placeholder="Date of meeting" readonly />
+    <input matInput [matDatepicker]="picker" style="border-top: none;border-right: none;border-left: none; text-align: center;" placeholder="Date of meeting" readonly  [(ngModel)]="formsdataforpost.date" />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>

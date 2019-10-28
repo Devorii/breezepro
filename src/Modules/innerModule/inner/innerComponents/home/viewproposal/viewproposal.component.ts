@@ -17,14 +17,14 @@ export class ViewproposalComponent implements OnInit {
   ErrorMessage;
 
   ngOnInit() {
-    console.log("called");
+   // console.log("called");
     this.getProductlists();
   }
 
   getProductlists(){
 
     this.data.GetProductlist(this.cid).subscribe((result) => {
-      console.log(result);
+     // console.log(result);
       if (result) {
         //this.dropdownList = result.data
         this.spinner.hide();

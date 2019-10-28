@@ -25,10 +25,10 @@ export class DescriptionComponent implements OnInit {
 
   ngOnInit() {
     this.Display();
-    console.log(this.storedata.clientId);
-    console.log(this.storedata.companyName);
-    console.log(this.storedata.productId);
-    console.log(this.storedata.packageId);
+    // console.log(this.storedata.clientId);
+    // console.log(this.storedata.companyName);
+    // console.log(this.storedata.productId);
+    // console.log(this.storedata.packageId);
   }
 
   numberOnly(event): boolean {
@@ -46,7 +46,7 @@ export class DescriptionComponent implements OnInit {
     // console.log(this.len)
     var mObj = {
       id: this.len,
-      productname: product,
+      name: product,
       amount: price
     };
 
@@ -77,11 +77,15 @@ export class DescriptionComponent implements OnInit {
     var mlocationItem = this.formData.indexOf(bTest);
 
     this.formData.splice(mlocationItem, 1);
-    console.log(this.formData);
+    //console.log(this.formData);
   }
 
   nextpage(){
     this.storedata.pricingList = this.formData;
     this.router.navigate(['dashboard/investment']);
+  }
+
+  back(){
+    this.router.navigate(['dashboard/create']);
   }
 }

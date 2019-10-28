@@ -8,6 +8,7 @@ import { AuthServiceService as AuthGuard } from '../../app/auth-service.service'
 import{PagenotfoundComponent} from  "../inner/innerComponents/pagenotfound/pagenotfound.component"
 import { DescriptionComponent } from './innerComponents/home/description/description.component';
 import { InvestmentComponent } from './innerComponents/home/investment/investment.component';
+import {ThankyouComponent} from './innerComponents/home/thankyou/thankyou.component'
 const routes: Routes = [
 
  
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'dashboard/view', component: ViewproposalComponent,canActivate: [AuthGuard] },
     { path: 'dashboard/description', component: DescriptionComponent,canActivate: [AuthGuard] },
     { path: 'dashboard/investment', component: InvestmentComponent,canActivate: [AuthGuard] },
+    { path: 'dashboard/Thankyou', component: ThankyouComponent,canActivate: [AuthGuard] },
    
 
   ] },

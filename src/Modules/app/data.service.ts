@@ -30,7 +30,7 @@ export class DataService {
 
   setheader()
   {
-    console.log("called");
+    
     this.HttpHeaderOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'multipart/form-data, application/json',
@@ -78,6 +78,11 @@ export class DataService {
     return this.http.post<any>(this.Urlendpoint + 'products', JSON.stringify(product), this.HttpHeaderOptions);
    //return this.http.get(this.Urlendpoint + 'leads',this.HttpHeaderOptions);
  }
+
+
+ PostProposal(company_name,leads_id,package_id,products,prices,investment,date): Observable<any> {
+  return this.http.post<any>(this.Urlendpoint + 'proposal/company_name='+company_name +'&leads_id='+leads_id, this.HttpHeaderOptions);
+}
 
 }
 

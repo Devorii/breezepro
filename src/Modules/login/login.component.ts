@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
               localStorage.googletoken = result.data.token;
               localStorage.googlename = result.data.name;
               this.data.setheader();
-              console.log(localStorage.googletoken);
-              console.log(localStorage.googlename);
+             // console.log(localStorage.googletoken);
+             // console.log(localStorage.googlename);
               this.router.navigate(['dashboard/create'])
               this.spinner.hide();
             }

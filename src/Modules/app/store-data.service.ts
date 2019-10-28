@@ -14,6 +14,9 @@ clientId;
 packageId;
 productId =[];
 pricingList = [];
+investment;
+date;
+
   UserDetails(product) {
   
   }

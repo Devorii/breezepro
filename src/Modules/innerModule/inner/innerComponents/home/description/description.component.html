@@ -34,15 +34,18 @@
     <ul class="list-group-item" *ngFor="let data of formData">
 
         <li class="">
-            <span style="align-content:left">{{ data.productname }}</span> <span
+            <span style="align-content:left">{{ data.name }}</span> <span
                 style="position: absolute;right: 15%;">{{ data.amount }}</span>
             <span style="position: absolute;right: 15px;"> <a (click)="onItemDeselect(data)" class="delete"><i
                         class="fa fa-trash"></i></a></span>
         </li>
     </ul>
 </div>
-<div style="position: absolute;bottom:15px;right: 45%;padding-bottom: 15px;font-size: 20px;">
+<div style="position: absolute;bottom:15px;right: 37%;padding-bottom: 15px;font-size: 20px;border-bottom: 2px;">
     <a class="next" (click)="nextpage()" >Next</a>
+</div>
+<div style="position: absolute;bottom:15px;right: 52%;padding-bottom: 15px;font-size: 20px;">
+    <a class="next" (click)="back()" >Back</a>
 </div>
 </div>
 <br>

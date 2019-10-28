@@ -87,7 +87,7 @@ export class CreateComponent implements OnInit {
   }
 
   onItemDeselect(item1: any) {
-    console.log(item1);
+   // console.log(item1);
 
     var removeIndex = this.setOptions
       .map(function (item) {
@@ -96,7 +96,7 @@ export class CreateComponent implements OnInit {
       .indexOf(item1.id);
 
     this.setOptions.splice(removeIndex, 1);
-    console.log(this.setOptions);
+   // console.log(this.setOptions);
   }
 
   onItemSelect1(item: any) {
@@ -119,7 +119,7 @@ export class CreateComponent implements OnInit {
     //this.spinner.show();
     this.data.Getleads().subscribe(
       result => {
-        console.log(result);
+      //  console.log(result);
         if (result) {
           this.ListInfo = result.data;
           this.spinner.hide();
@@ -137,7 +137,7 @@ export class CreateComponent implements OnInit {
   callNewModal(modaldata) {
     this.modalName = modaldata.client_name;
     this.selecteddata.id = modaldata.id;
-    console.log(this.selecteddata.id); //this info 1
+  //  console.log(this.selecteddata.id); //this info 1
     this.selecteddata.client_name = modaldata.client_name;
     this.selecteddata.client_email = modaldata.client_email;
   }
@@ -147,8 +147,8 @@ export class CreateComponent implements OnInit {
     this.formsdata.client_email = this.selecteddata.client_email;
     this.formsdata.id = this.selecteddata.id;
     this.formsdata.client_name = this.selecteddata.client_name;
-    console.log(this.formsdata.client_email);
-    console.log(this.formsdata.client_name);
+   // console.log(this.formsdata.client_email);
+   // console.log(this.formsdata.client_name);
   }
 
   editdata() {
@@ -158,7 +158,7 @@ export class CreateComponent implements OnInit {
     this.formsdata.client_name = this.selecteddata.client_name;
     this.data.Editleads(this.formsdata).subscribe(
       result => {
-        console.log(result);
+    //    console.log(result);
         if (result.success == true) {
           this.showdupdate();
           this.getleads();
@@ -182,7 +182,7 @@ export class CreateComponent implements OnInit {
     this.spinner.show();
     this.data.Deleteleads(this.selecteddata.id).subscribe(
       result => {
-        console.log(result);
+      //  console.log(result);
         if (result) {
           this.showdelete();
           this.getleads();
@@ -207,8 +207,8 @@ export class CreateComponent implements OnInit {
     this.cName = companyName; // this info 2
     this.selecteddataid.id = this.selectedItems_; // this info 3
     this.getProductlists();
-    console.log(companyName);
-    console.log(this.selecteddataid.id);
+    //console.log(companyName);
+    //console.log(this.selecteddataid.id);
   }
 
   //create lead
@@ -217,11 +217,11 @@ export class CreateComponent implements OnInit {
     this.formsdata.client_email = this.formsdataforpost.client_email;
     this.formsdata.client_name = this.formsdataforpost.client_name;
 
-    console.log(this.formsdata);
+    //console.log(this.formsdata);
     if (this.formsdata.client_email != "" && this.formsdata.client_name != "") {
       this.data.Createleads(this.formsdata).subscribe(
         result => {
-          console.log(result);
+        //  console.log(result);
           if (result) {
 
             this.showSuccess();
@@ -261,10 +261,10 @@ export class CreateComponent implements OnInit {
   }
 
   getProductlists() {
-    console.log(this.selecteddataid);
+    //console.log(this.selecteddataid);
     this.data.GetProductlist(this.selecteddataid).subscribe(
       result => {
-        console.log(result);
+      //  console.log(result);
         if (result) {
           this.dropdownList2 = result.data;
           this.spinner.hide();
@@ -281,7 +281,7 @@ export class CreateComponent implements OnInit {
   onItemSelect(item: any) {
     this.selectedItems_ = item.id;
 
-    console.log(this.selectedItems_);
+   // console.log(this.selectedItems_);
   }
 
   Verify() {
@@ -320,4 +320,15 @@ export class CreateComponent implements OnInit {
   showderror(error) {
     this.toastr.error(error, "error");
   }
+
+  back(){
+    (document.querySelector(".customPKG_page_Edit") as HTMLElement).style.display =
+      "none";
+    (document.querySelector(
+      ".content_Wrapper "
+    ) as HTMLElement).style.display = "block";
+    this.router.navigate(['dashboard/create']);
+  }
+
+
 }

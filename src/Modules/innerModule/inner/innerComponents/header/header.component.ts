@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
    
      this.first =  localStorage.googlename.charAt(0)
      this.last = localStorage.googlename.split(/(?<=^\S+)\s/);
-     console.log(this.last)
+   //  console.log(this.last)
      this.last =  this.last[1]
      this.last =  this.last.charAt(0)
 
