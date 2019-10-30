@@ -1,10 +1,19 @@
 
 
 <div class="inner cover container">
-    <h1 class="cover-heading" style="text-align: center;">Thank You</h1>
-    <p class="lead">You will recieve an email once your proposal is approved.</p>
+    <h1 class="cover-heading" style="text-align: center;">{{greting}}</h1>
+    <div  class="lead" *ngIf = "success; else elseBlock">{{success}}</div >
+    <ng-template class="lead" #elseBlock>Proposal not created Error: {{ErrorMessage}}</ng-template>
+    <!-- <p class="lead">You will recieve an email once your proposal is approved.</p> -->
     <p class="lead">
       <a [routerLink]="['/dashboard/create']" class="btn btn-lg btn-default" style="text-align: center;">Home</a>
     </p>
 
 </div>
+
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="line-scale">
+<p style="font-size: 20px; color: white">Creating Proposal...</p></ngx-spinner>

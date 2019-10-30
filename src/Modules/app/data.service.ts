@@ -80,8 +80,8 @@ export class DataService {
  }
 
 
- PostProposal(company_name,leads_id,package_id,products,prices,investment,date): Observable<any> {
-  return this.http.post<any>(this.Urlendpoint + 'proposal/company_name='+company_name +'&leads_id='+leads_id, this.HttpHeaderOptions);
+ PostProposal(product): Observable<any> {
+  return this.http.post<any>(this.Urlendpoint + 'proposal', JSON.stringify(product), this.HttpHeaderOptions);
 }
 
 }

@@ -13,7 +13,7 @@ companyName;
 clientId;
 packageId;
 productId =[];
-pricingList = [];
+pricingList =[];
 investment;
 date;
 

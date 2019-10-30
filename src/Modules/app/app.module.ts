@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
     [
@@ -53,8 +54,7 @@ export function getAuthServiceConfigs() {
     easeTime:300,
     tapToDismiss:true,
     }),
-    ReactiveFormsModule,
-    
+    ReactiveFormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,

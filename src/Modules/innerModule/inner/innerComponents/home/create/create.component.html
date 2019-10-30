@@ -186,6 +186,7 @@
             (onSelectAll)="onSelectAll($event)"
           >
           </ng-multiselect-dropdown>
+          <input type="text" ng-model="resultData" name="days" style="display:none" required />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -210,8 +211,8 @@
 <!-- Creating a state type action not sure if this is the best way to do this in Angular. -->
 
 <div class="customPKG_page_Edit">
-  <h4 class="text-center">{{ cName }}</h4>
-  <h4 class="text-center">{{ CID }}</h4>
+  <h4 class="text-center">Company Name: <span><u>{{ cName }}</u></span></h4>
+  <div class="row"></div>
 
 
 
