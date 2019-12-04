@@ -1,0 +1,28 @@
+@media(min-width: 600px){ 
+    .formNav{
+         bottom: 50px !important;  
+        }
+        .next{ 
+            right:20% !important;
+            a{
+                &:hover{
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        .back{ 
+            right:37% !important;
+            a{
+                &:hover{
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    .desc_Container{
+        width: 67vw !important;
+        padding: 30px !important;
+    }
+}

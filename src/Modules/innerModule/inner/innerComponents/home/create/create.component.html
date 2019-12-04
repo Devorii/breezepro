@@ -37,7 +37,7 @@
           </div>
           <div class="modal-body inputStyle">
             <button
-              class="text-left"
+              class="text-left crudBtns"
               data-toggle="modal"
               data-dismiss="modal"
               data-target="#myModal1"
@@ -46,14 +46,14 @@
               Edit
             </button>
             <button
-              class="text-left"
+              class="text-left crudBtns"
               (click)="leadDelete()"
               data-dismiss="modal"
             >
               Delete
             </button>
             <button
-              class="text-left"
+              class="text-left crudBtns"
               data-toggle="modal"
               data-dismiss="modal"
               (click)="getdropdown()"
@@ -186,18 +186,19 @@
             (onSelectAll)="onSelectAll($event)"
           >
           </ng-multiselect-dropdown>
-          <input type="text" ng-model="resultData" name="days" style="display:none" required />
+          <input
+            type="text"
+            ng-model="resultData"
+            name="days"
+            style="display:none"
+            required
+          />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">
             Close
           </button>
-          <button
-            type="submit"
-            class="btn btn-default"
-            data-dismiss="modal"
-            (click)="CreateProposal(companyName.value)"
-          >
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="CreateProposal(companyName.value)">
             Submit
           </button>
         </div>
@@ -211,10 +212,11 @@
 <!-- Creating a state type action not sure if this is the best way to do this in Angular. -->
 
 <div class="customPKG_page_Edit">
-  <h4 class="text-center">Company Name: <span><u>{{ cName }}</u></span></h4>
+  <h4 class="text-center">
+    Company Name:
+    <span><u>{{ cName }}</u></span>
+  </h4>
   <div class="row"></div>
-
-
 
   <!-- multiselector -->
   <div class="selectProds">
@@ -230,12 +232,11 @@
     </ng-multiselect-dropdown>
   </div>
 
-  <div style="position: absolute;bottom:15px;right: 37%;padding-bottom: 15px;font-size: 20px;border-bottom: 2px;">
-    <a class="next" (click)="Verify()" >Next</a>
+  <div class="formNav next" style="position: absolute;bottom:15px;right: 37%;padding-bottom: 15px;font-size: 20px;border-bottom: 2px;">
+    <a (click)="Verify()">Next</a>
+  </div>
+  <div class="formNav back" style="position: absolute; bottom: 15px; right: 52%; padding-bottom: 15px; font-size: 20px;">
+    <a (click)="back()">Back</a>
+  </div>
 </div>
-<div style="position: absolute;bottom:15px;right: 52%;padding-bottom: 15px;font-size: 20px;">
-    <a class="next" (click)="back()" >Back</a>
-</div>
-
-
-</div>
+<app-footer></app-footer>

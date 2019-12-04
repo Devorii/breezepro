@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   splitted;
   removedot = [];
   ErrorMessage: string;
-  ValidDomain = "breezemaxwebsales";
+  ValidDomain = "breezemaxweb";
 
   @Input() productData = { email: 'eve.holt@reqres.in', password: 'cityslicka' };
 

@@ -1,0 +1,10 @@
+@media (min-width: 600px) {
+  .signOut {
+    margin-top: -9px !important;
+    width: 70% !important;
+    bottom: 30px !important;
+    &:hover{ 
+      cursor: pointer;
+    }
+  }
+}
