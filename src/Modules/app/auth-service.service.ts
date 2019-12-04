@@ -11,7 +11,7 @@ export class AuthServiceService implements CanActivate {
 
   canActivate(): boolean {
     if (!this.data.isAuthenticated()) {
-      console.log("hi");
+     // console.log("hi");
       this.router.navigate(['login']);
       return false;
     }

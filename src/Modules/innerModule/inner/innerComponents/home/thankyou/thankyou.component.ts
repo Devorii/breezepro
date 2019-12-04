@@ -60,9 +60,9 @@ export class ThankyouComponent implements OnInit {
     this.data.PostProposal(this.product).subscribe(
       result => {
         console.log(result);
-        if (result.data) {
+        if (result.success) {
           this.spinner.hide();
-console.log("success");
+//console.log("success");
           this.greting ="Thank you"
           this.success =
             "You will recieve an email once your proposal is approved";
@@ -86,12 +86,12 @@ console.log("success");
       err => {
         this.greting ="Sorry"
         this.spinner.hide();
-        console.log("error");
+        //console.log("error");
         this.ErrorMessage =
           "Error : " + err + " .Please tell admin about this error";
       }
     );
-
+   // this.spinner.hide();
     //this.data =  _.zip([this.storedata.companyName],[this.storedata.clientId],[this.storedata.packageId],[this.storedata.productId],[this.storedata.pricingList],[this.storedata.investment],[this.storedata.date]);
     //console.log(this.data);
   }

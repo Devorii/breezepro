@@ -24,7 +24,7 @@ export class InvestmentComponent implements OnInit {
   nextpage(){
     this.formsdataforpost.details  =   this.formsdataforpost.details.replace(/\n/g, '<br>');
     this.storedata.investment  = this.formsdataforpost.details;
-    console.log(this.formsdataforpost.details)
+    //console.log(this.formsdataforpost.details)
     this.storedata.date  = this.formsdataforpost.date;
     //this.formsdataforpost.client_name = "";
     // console.log(this.formsdataforpost.date)

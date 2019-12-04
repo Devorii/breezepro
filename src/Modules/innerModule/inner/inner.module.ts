@@ -10,14 +10,11 @@ import { CreateComponent } from './innerComponents/home/create/create.component'
 import { NewproposalComponent } from './innerComponents/home/newproposal/newproposal.component';
 import { ViewproposalComponent } from './innerComponents/home/viewproposal/viewproposal.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
-import { CreateProposalComponent } from './innerComponents/globalComponents/create-proposal/create-proposal.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PagenotfoundComponent } from './innerComponents/pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { PdfCreateComponent } from './innerComponents/globalComponents/pdf-create/pdf-create.component';
-import { GlobalMultiselectorComponent } from './innerComponents/globalComponents/global-multiselector/global-multiselector.component';
 
 
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -26,7 +23,8 @@ import { CustomFormsModule } from 'ng2-validation';
 import { DescriptionComponent } from './innerComponents/home/description/description.component';
 import { InvestmentComponent } from './innerComponents/home/investment/investment.component';
 import {MatDatepickerModule,MatNativeDateModule } from '@angular/material';
-import { ThankyouComponent } from './innerComponents/home/thankyou/thankyou.component'
+import { ThankyouComponent } from './innerComponents/home/thankyou/thankyou.component';
+
 @NgModule({
   declarations: [
     HomeComponent, 
@@ -35,7 +33,7 @@ import { ThankyouComponent } from './innerComponents/home/thankyou/thankyou.comp
     CreateComponent, 
     NewproposalComponent, 
     ViewproposalComponent, 
-    ButtonComponent, CreateProposalComponent, PdfCreateComponent, PagenotfoundComponent, GlobalMultiselectorComponent, DescriptionComponent, InvestmentComponent, ThankyouComponent ],
+    ButtonComponent, PagenotfoundComponent, DescriptionComponent, InvestmentComponent, ThankyouComponent ],
   imports: [
     CommonModule,
     InnerRoutingModule,

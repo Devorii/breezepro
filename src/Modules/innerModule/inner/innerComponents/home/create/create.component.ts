@@ -3,7 +3,7 @@ import { DataService } from "../../../../../app/data.service";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"; //newly
-import { IDropdownSettings } from "ng-multiselect-dropdown";
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { Router } from "@angular/router";
 import { StoreDataService } from "../../../../../app/store-data.service";
 @Component({
@@ -21,8 +21,8 @@ export class CreateComponent implements OnInit {
   dropdownList = [];
   dropdownList2 = [];
   selectedItems_: any;
-  dropdownSettings: IDropdownSettings = {};
-  dropdownSettings2: IDropdownSettings = {};
+  dropdownSettings: NgMultiSelectDropDownModule = {};
+  dropdownSettings2: NgMultiSelectDropDownModule = {};
 
   selectedItems = [];
   selectedItems1 = [];
@@ -82,7 +82,8 @@ export class CreateComponent implements OnInit {
       selectAllText: "Select All",
       unSelectAllText: "UnSelect All",
       itemsShowLimit: 3,
-      allowSearchFilter: true
+      allowSearchFilter: true,
+      limitSelection: 12,
     };
   }
 
@@ -103,11 +104,11 @@ export class CreateComponent implements OnInit {
     // this.setOptions.setMultiSelectOptions(item.id, item.product_name)
     //console.log(item);
     this.setOptions.push(item);
-    console.log(item);
+    //console.log(item);
   }
 
-  onSelectAll(items: any) {
-    this.setOptions.push(items);
+  onSelectAll(item: any) {
+    this.setOptions.push(item);
     //console.log(this.selectedItems1);
   }
 

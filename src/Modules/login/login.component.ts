@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   splitted;
   removedot = [];
   ErrorMessage: string;
-  ValidDomain = "breezemaxweb";
+  ValidDomain = "breezemaxwebsales";
 
   @Input() productData = { email: 'eve.holt@reqres.in', password: 'cityslicka' };
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
          
           this.data.login(userData).subscribe((result) => {
 
-            console.log(result);
+           // console.log(result);
             if(result){
               localStorage.googletoken = result.data.token;
               localStorage.googlename = result.data.name;
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
         else {
           this.spinner.hide();
           //console.log(userData.email + " is not valid");
-          this.ErrorMessage = userData.email  + " is not allowed to access BreezeProposal";
+          this.ErrorMessage = userData.email  + " is not allowed to access BreezeProposal. Please use a Breezemaxwebsales account";
         }
 
 
