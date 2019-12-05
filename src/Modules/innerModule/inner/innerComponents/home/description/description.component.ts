@@ -13,6 +13,7 @@ export class DescriptionComponent implements OnInit {
 
   amountclear;
   productclear;
+  descriptionproductclear;
   len;
   formData = [];
   // Array<{id:'', productname: ''; amount: '' }>
@@ -39,21 +40,23 @@ export class DescriptionComponent implements OnInit {
     return true;
   }
 
-  Add(product, price) {
+  Add(product, price,descriptionproduct) {
     // console.log(product);
-    // console.log(price);
+     console.log(descriptionproduct);
     this.len = _.size(this.formData);
     // console.log(this.len)
     var mObj = {
       id: this.len,
       name: product,
-      amount: price
+      amount: price,
+      description:descriptionproduct
     };
 
     this.formData.push(mObj);
     // this.productPriceList.push(this.formData);
     product = "";
     price = "";
+    this.descriptionproductclear = ""
     this.amountclear = "";
     this.productclear = "";
     // console.log(this.formData);
