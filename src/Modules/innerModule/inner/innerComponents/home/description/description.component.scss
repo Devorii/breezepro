@@ -1,3 +1,21 @@
+@media(min-width: 992px){ 
+    .prod_wrapper{
+        width: auto;
+        height: 500px;
+        overflow-y: scroll;
+    }
+
+}
+
+@media(max-width: 480px){ 
+    .prod_wrapper{
+        width: auto;
+        height: 150px;
+        overflow-y: scroll;
+    }
+
+}
+
 @media(min-width: 600px){ 
     .formNav{
          bottom: 50px !important;  
@@ -21,6 +39,7 @@
             }
         }
 
+    
     .desc_Container{
         width: 67vw !important;
         padding: 30px !important;
@@ -84,8 +103,4 @@
         width: 10%;
     }
 }
-.prod_wrapper{
-    width: auto;
-    height: 150vh;
-    overflow-y: scroll;
-}
+

@@ -14,7 +14,13 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -45,6 +51,7 @@ export function getAuthServiceConfigs() {
     NgxSpinnerModule,
     NgbModule,
     CommonModule,
+    PerfectScrollbarModule,
     NgMultiSelectDropDownModule.forRoot(),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
@@ -53,13 +60,20 @@ export function getAuthServiceConfigs() {
     preventDuplicates: true,
     easeTime:300,
     tapToDismiss:true,
+    
     }),
     ReactiveFormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,
-    useFactory: getAuthServiceConfigs
-  }],
+    useFactory: getAuthServiceConfigs,
+    
+  },
+  {
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+  }
+],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

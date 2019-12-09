@@ -62,13 +62,17 @@
           <div class="prodDescPrice deleteBtn"></div> 
         </div>
         <div class="" *ngFor="let data of formData">
-          <div class="prodDescPrice_container">
+            <perfect-scrollbar class="scroll-container" fxFlex="auto" [scrollIndicators]="true">
+          <div class="prodDescPrice_container scrollable-content">
               <div class="prodDescPrice prodInfo">{{ data.name }}</div>
               <div class="prodDescPrice desc prodInfo">{{ data.description }}</div>
               <div class="prodDescPrice prodInfo">{{ data.amount }}</div>
               <div class="prodDescPrice deleteBtn"><a (click)="onItemDeselect(data)" class="delete"><i class="fa fa-trash"></i></a>
           </div>
+          
+         
           </div>
+        </perfect-scrollbar>
       </div>
   </div>
   

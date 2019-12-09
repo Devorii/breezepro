@@ -1,15 +1,21 @@
 <!-- List view iteration -->
 <!-- <ejs-calendar></ejs-calendar> -->
 <div class="content_Wrapper">
+    
   <div class="list-group" data-toggle="modal" data-target="#leadModal">
+    
     <ngx-spinner [fullScreen]="false" type="line-scale" size="medium">
       <p class="loading">Loading...</p>
     </ngx-spinner>
+   
     <ul class="list-group-item" *ngFor="let leads of ListInfo">
-      <li class="ClientName" (click)="callNewModal(leads)">
+        <perfect-scrollbar class="scroll-container" fxFlex="auto" [scrollIndicators]="true">
+      <li class="ClientName scrollable-content" (click)="callNewModal(leads)">
         {{ leads.client_name }}
       </li>
+    </perfect-scrollbar>
     </ul>
+ 
   </div>
 
   <!-- Universal Button CREATE BTN -->
