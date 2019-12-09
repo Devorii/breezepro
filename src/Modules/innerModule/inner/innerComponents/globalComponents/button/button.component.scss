@@ -13,15 +13,15 @@ $accentColor: #FC4F44;
     }
 }
 .btnDark{ 
-    color: black ;
+    color:$accentColor ;
     background: none;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $accentColor;
     font-size: 17px;
     &:hover{ 
         cursor: pointer;
-        color: $accentColor;
-        border-bottom: 1px solid $accentColor;
+        color: cornflowerblue;
+        border-bottom: 1px solid cornflowerblue;
     }
 
 }

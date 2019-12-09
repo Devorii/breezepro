@@ -5,7 +5,7 @@
 <div class="container row desc_Container">
   <form (submit)="Add(product.value, amount.value, descriptionproduct.value)">
     <div class="col-xs-4">
-      <label>Product</label>
+      <label class="pageHdrs">Product</label>
       <input
         type="text"
         class="form-control"
@@ -16,12 +16,12 @@
       />
     </div>
     <div class="col-xs-3">
-      <label>Amount</label>
+      <label class="pageHdrs">Amount</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
         <input
           type="text"
-          class="form-control"
+          class="form-control "
           id="exampleInputAmount"
           placeholder="2,000/m"
           #amount
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="col-xs-5">
-      <label>Description</label>
+      <label class="pageHdrs">Description</label>
       <input
         type="text"
         class="form-control"
@@ -42,9 +42,9 @@
       />
     </div>
     <div class="row col-xs-12 col-md" style="padding-top: 15px; display:flex; justify-content: center !important;">
-        <div>
+        <div style="right: 0px; position: absolute;">
             <!-- <label>Add</label> -->
-            <button class="form-control" style="width: 200px;" placeholder=".col-xs-4"><strong>Add +</strong></button>
+            <button class="form-control addbtn" placeholder=".col-xs-4"><strong>Add +</strong></button>
         </div>
       
     </div>
@@ -54,29 +54,52 @@
   <br />
   <br />
 
-  <div>
-    <div class="col-sm-3 col-xs-3 col-sm-offset-1"><strong>Product</strong></div>
-    <div class="col-sm-4 col-xs-4"><strong>Description</strong></div>
-    <div class="col-sm-2 col-xs-2"><strong>Price</strong></div>
-    <div class="col-sm-1 col-xs-1"></div>
-    
+  <div class="prod_wrapper">
+    <div class="prodDescPrice_container">
+          <div class="prodDescPrice pageHdrs"><strong>Product</strong></div>
+          <div class="prodDescPrice pageHdrs"><strong>Description</strong></div>
+          <div class="prodDescPrice pageHdrs"><strong>Price</strong></div>
+          <div class="prodDescPrice deleteBtn"></div> 
+        </div>
+        <div class="" *ngFor="let data of formData">
+          <div class="prodDescPrice_container">
+              <div class="prodDescPrice prodInfo">{{ data.name }}</div>
+              <div class="prodDescPrice desc prodInfo">{{ data.description }}</div>
+              <div class="prodDescPrice prodInfo">{{ data.amount }}</div>
+              <div class="prodDescPrice deleteBtn"><a (click)="onItemDeselect(data)" class="delete"><i class="fa fa-trash"></i></a>
+          </div>
+          </div>
+      </div>
   </div>
+  
 
-  <!-- <div style="padding-left: 15px; padding-top: 10px;">
+
+  <div
+    class="formNav next"
+    style="position: absolute;bottom:15px;right: 37%;padding-bottom: 15px;font-size: 20px;border-bottom: 2px;"
+  >
+    <a class="next" (click)="nextpage()">Next</a>
+  </div>
+  <div
+    class="formNav back"
+    style="position: absolute;bottom:15px;right: 52%;padding-bottom: 15px;font-size: 20px;"
+  >
+    <a class="next"  (click)="back()">Back</a>
+  </div>
+</div>
+<br />
+
+
+
+ <!-- <div style="padding-left: 15px; padding-top: 10px;">
     <b
+    col-sm-offset-1
       ><span style="align-content:left">Product Name</span>
       <span style="position: absolute;right: 35%;">Description</span>
       <span style="position: absolute;right: 15%;">Price</span>
       <span style="position: absolute;right: 15px;"></span
     ></b>
   </div> -->
-
-  <div class="" *ngFor="let data of formData">
-
-        <div class="col-sm-3 col-xs-3 col-sm-offset-1">{{ data.name }}</div>
-        <div class="col-sm-4 col-xs-4">{{ data.description }}</div>
-        <div class="col-sm-2 col-xs-2">{{ data.amount }}</div>
-        <div class="col-sm-1 col-xs-1"> </div>
     <!-- <ul class="list-group-item" *ngFor="let data of formData">
       <li class="">
         <span style="align-content:left">{{ data.name }}</span>
@@ -88,18 +111,3 @@
         ></span>
       </li>
     </ul> -->
-  </div>
-  <div
-    class="formNav next"
-    style="position: absolute;bottom:15px;right: 37%;padding-bottom: 15px;font-size: 20px;border-bottom: 2px;"
-  >
-    <a class="next" (click)="nextpage()">Next</a>
-  </div>
-  <div
-    class="formNav back"
-    style="position: absolute;bottom:15px;right: 52%;padding-bottom: 15px;font-size: 20px;"
-  >
-    <a class="next" (click)="back()">Back</a>
-  </div>
-</div>
-<br />

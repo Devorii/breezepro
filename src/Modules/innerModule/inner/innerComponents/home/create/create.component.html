@@ -59,7 +59,7 @@
               (click)="getdropdown()"
               data-target="#createProposal"
             >
-              Create Proposal
+             Create Proposal
             </button>
           </div>
         </div>
@@ -78,17 +78,17 @@
             <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
-            <h4 class="modal-title text-center ">Create New Lead</h4>
+            <h4 class="modal-title text-center pagehdr">Create New Lead</h4>
           </div>
           <div class="modal-body inputStyle">
-            <label for="name">Name:</label>
+            <label for="name" class="leadLabels" style="color: grey;">Full Name:</label>
             <input
               class="modalInput"
               type="text"
               name="name"
               [(ngModel)]="formsdataforpost.client_name"
             />
-            <label for="email">Email:</label>
+            <label for="email" class="pagehdr leadLabels" style="color: grey;margin-top: 20px;">Email:</label>
             <input
               class="modalInput"
               type="email"
@@ -171,13 +171,14 @@
           <button type="button" class="close" data-dismiss="modal">
             &times;
           </button>
-          <h4 class="modal-title text-center ">Create Proposal</h4>
+          <h4 class="modal-title text-center pagehdr ">Create Proposal</h4>
         </div>
         <div class="modal-body inputStyle">
           <!-- Fill Inside -->
-          <label for="companyName">Company Name</label>
+          <label for="companyName" class="leadLabels">Company Name</label>
           <input type="text" name="companyName" id="cName" #companyName />
           <ng-multiselect-dropdown
+            style="color: grey"
             [placeholder]="'Select Client Packages'"
             [data]="dropdownList"
             [(ngModel)]="selectedItems"
@@ -212,9 +213,9 @@
 <!-- Creating a state type action not sure if this is the best way to do this in Angular. -->
 
 <div class="customPKG_page_Edit">
-  <h4 class="text-center">
-    Company Name:
-    <span><u>{{ cName }}</u></span>
+  <h4 class="text-left pagehdr">
+    Company:
+    <span style="color: rgb(130, 145, 161);">{{ cName }}</span>
   </h4>
   <div class="row"></div>
 
@@ -233,10 +234,10 @@
   </div>
 
   <div class="formNav next" style="position: absolute;bottom:15px;right: 37%;padding-bottom: 15px;font-size: 20px;border-bottom: 2px;">
-    <a (click)="Verify()">Next</a>
+    <a class="next" (click)="Verify()">Next</a>
   </div>
   <div class="formNav back" style="position: absolute; bottom: 15px; right: 52%; padding-bottom: 15px; font-size: 20px;">
-    <a (click)="back()">Back</a>
+    <a class="next"(click)="back()">Back</a>
   </div>
 </div>
 <app-footer></app-footer>

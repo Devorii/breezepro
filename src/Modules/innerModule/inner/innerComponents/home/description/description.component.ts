@@ -3,6 +3,7 @@ import { StoreDataService } from "../../../../../app/store-data.service";
 import * as _ from 'underscore';
 import { Router } from "@angular/router";
 
+
 @Component({
   selector: "app-description",
   templateUrl: "./description.component.html",
@@ -56,7 +57,8 @@ export class DescriptionComponent implements OnInit {
     // this.productPriceList.push(this.formData);
     product = "";
     price = "";
-    this.descriptionproductclear = ""
+    descriptionproduct = "";
+    this.descriptionproductclear = "";
     this.amountclear = "";
     this.productclear = "";
     // console.log(this.formData);

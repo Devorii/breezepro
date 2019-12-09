@@ -40,8 +40,30 @@ ul{
         width: 65%;
     }
 }
-
-
+input:focus, textarea:focus, span:focus, select:focus, button:focus, a:focus{
+  outline: none;
+}
+input{ 
+  color: grey !important;
+}
+.btn{ 
+color: cornflowerblue !important;
+border: 1px solid cornflowerblue;
+&:hover{ 
+color: cornflowerblue !important;
+border: 1px solid cornflowerblue;
+background-color: rgb(233, 239, 241);
+}
+&:focus{ 
+  outline: none;
+}
+}
+span.dropdown-btn{ 
+  color: grey;
+}
+.next{ 
+  color: #FC4F44;
+}
 
 
 
