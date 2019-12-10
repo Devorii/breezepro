@@ -1,3 +1,8 @@
+.desc_Container{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
 @media(min-width: 992px){ 
     .prod_wrapper{
         width: auto;
@@ -49,8 +54,11 @@
     display: flex;
     flex-direction: row;
     padding-left: 20px;
-    width: 100%;
+    width: 98%;
     text-align: left;
+    @media(min-width: 600px){
+        width: 100%;
+    }
     .prodDescPrice{
         margin-right: 10%;
         text-align: left;
@@ -86,11 +94,13 @@
     width: 100%;
     text-align: left;
     .prodDescPrice{
-        margin-right: 7%;
         text-align: left;
         width: 30% !important;
         height: auto;
         margin-bottom: 15px;
+        @media(min-width: 600px){
+            margin-right: 7%;
+        }
     }
     .pageHdrs{
         color: #337ab7;
@@ -100,7 +110,10 @@
         height: auto;
     }
     .deleteBtn{
-        width: 10%;
+        width: 30px !important;
+        @media(min-width: 600px){
+            width: 10%;
+        }
     }
 }
 
